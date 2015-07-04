@@ -61,6 +61,8 @@ Peatio::Application.routes.draw do
     resources :funds, only: [:index] do
       collection do
         post :gen_address
+        get :ideal_payment
+        get :mollie_payment_result
       end
     end
 

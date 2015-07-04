@@ -7,3 +7,4 @@ json.accounts @accounts
 json.withdraws @withdraws
 json.fund_sources @fund_sources
 json.banks @banks.map(&:attributes), :code
+json.mollie_issuers @mollie_issuers

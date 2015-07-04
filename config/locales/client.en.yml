@@ -42,6 +42,7 @@ en:
       currency_name:
         cny: CNY
         btc: BTC
+        eur: EUR
       deposit_cny:
         title: Chinese Yuan Deposit
         desc: "To deposit via Bank transfer, please follow these steps:"
@@ -62,6 +63,12 @@ en:
         to_bank_name: Bank Name
         opening_bank_name: Account where created
         remark: 'Referral Code (Transfer identification code)'
+      deposit_eur:
+        title: Euro Deposit
+        desc: "To deposit euro's, use the following form."
+        bank: "Select your bank:"
+        amount: "Amount:"
+        notice_fee: "A small bank transaction fee will be added"
 
       deposit_btc:
         title: BTC Deposit
