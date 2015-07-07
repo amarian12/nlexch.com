@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150704120000) do
+ActiveRecord::Schema.define(version: 20150705131100) do
 
   create_table "account_versions", force: true do |t|
     t.integer  "member_id"
@@ -166,6 +166,7 @@ ActiveRecord::Schema.define(version: 20150704120000) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
+    t.string   "account_name"
   end
 
   create_table "id_documents", force: true do |t|

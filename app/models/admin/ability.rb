@@ -22,6 +22,7 @@ module Admin
       can :menu, Withdraw
       can :manage, ::Withdraws::Bank
       can :manage, ::Withdraws::Satoshi
+      can :manage, ::Withdraws::Euro
     end
   end
 end

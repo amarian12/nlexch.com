@@ -2,6 +2,8 @@ module Private
   class FundSourcesController < BaseController
 
     def create
+      a = fund_source_params
+      Rails.logger.warn a.to_json
       new_fund_source = current_user.fund_sources.new fund_source_params
 
       if new_fund_source.save
@@ -29,7 +31,7 @@ module Private
     end
 
     def fund_source_params
-      params.require(:fund_source).permit(:currency, :uid, :extra)
+      params.require(:fund_source).permit(:currency, :uid, :extra, :account_name)
     end
   end
 end

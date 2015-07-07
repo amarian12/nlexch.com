@@ -16,3 +16,14 @@
   proportion: true
   inuse: true
   type: WithdrawChannelBank
+- id: 600
+  key: euro
+  currency: eur
+  fixed: 2
+  fee_max: 100
+  min: 20
+  max: 1000000
+  fee: 0.01
+  proportion: true
+  inuse: true
+  type: WithdrawChannelEuro

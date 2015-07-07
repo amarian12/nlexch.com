@@ -204,7 +204,7 @@ class Withdraw < ActiveRecord::Base
 
   def ensure_account_balance
     if sum.nil? or sum > account.balance
-      errors.add :base, -> { I18n.t('activerecord.errors.models.withdraw.account_balance_is_poor') }
+      errors.add :base, -> { currency_text + sum.to_s + ">" + account.balance.to_s + " " + I18n.t('activerecord.errors.models.withdraw.account_balance_is_poor') }
     end
   end
 

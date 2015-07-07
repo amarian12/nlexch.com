@@ -96,6 +96,10 @@ module Private
           rescue
           end
           deposit.accept!
+          unless FundSource.find_by(:uid => payment.details.consumerAccount, :extra => payment.details.consumerBic)
+            new_fund_source = current_user.fund_sources.new fund_source_params(payment)
+            new_fund_source.save
+          end
           redirect_to '/funds#/deposits/eur'
         elsif payment.open? == false
           deposit.cancel!
@@ -109,6 +113,13 @@ module Private
     end
 
     private
+
+    def fund_source_params payment
+      {"uid" => payment.details.consumerAccount,
+       "extra" => payment.details.consumerBic,
+       "currency" => "eur",
+       "account_name" => payment.details.consumerName}
+    end
 
     def setup_mollie
       @mollie_issuers = []

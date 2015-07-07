@@ -119,6 +119,9 @@ en:
         min: At least
         withdraw_all: Withdraw all
 
+      withdraw_eur:
+        title: Euro Withdrawal
+
       withdraw_btc:
         title: BTC Withdraw
 
