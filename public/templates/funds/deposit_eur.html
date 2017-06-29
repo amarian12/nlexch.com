@@ -1,0 +1,60 @@
+<h2 class="panel-title">{{"funds.deposit_eur.title" | t}}</h2>
+
+<div class="flash-message" style="display:none"><div class="alert alert-danger"><p><i class="fa fa-info-circle"></i><span></span></p></div></div>
+
+<script language="text/javascript">
+  function get(name){
+    if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+    return decodeURIComponent(name[1]);
+  }
+  var error = get('error')
+  if (undefined != error && null != error) {
+    $('.flash-message').show()
+    $('.flash-message span').html(error);
+  }
+</script>
+
+<div class="help-block">
+  {{ "funds.deposit_eur.desc" | t }}
+</div>
+
+<form name="ideal-form" action="/funds/ideal_payment">
+  <table class="table">
+  <tr><td>{{ "funds.deposit_eur.bank" | t }}</td><td><select name="issuer" ng-model="selected"
+    ng-options="issuer.id as issuer.name for issuer in mollie_issuers" />&nbsp;&nbsp;<img src="/ideal_logo_small.png" /></td></tr>
+  <tr><td>{{ "funds.deposit_eur.amount" | t }}</td><td>
+
+    <input type="number"
+           name="amount"
+           ng-model="price"
+           step="0.01"
+           require />
+    &nbsp;&nbsp; {{ "funds.deposit_eur.notice_fee" | t }}</td></tr>
+  <tr><td></td><td><input class="btn btn-primary" data-loading-text="Creating..." name="commit" type="submit" value="{{'submit' | t}}"></td></tr>
+  </table>
+</form>
+
+<br>
+<h2 class="panel-title">{{ "funds.deposit_history.title" | t }}</h2>
+<table class="table" ng-controller="DepositHistoryController as dhCtrl">
+  <tr>
+    <th>{{ "funds.deposit_history.identification" | t }}</th>
+    <th>{{ "funds.deposit_history.time" | t }}</th>
+    <th>{{ "funds.deposit_history.from" | t }}</th>
+    <th>{{ "funds.deposit_history.amount" | t }}</th>
+    <th>{{ "funds.deposit_history.state_and_action" | t }}</th>
+  </tr>
+  <tr class="deposit_item" ng-class="{ 'new-row':dhCtrl.newRecord(deposit) }" ng-repeat="deposit in dhCtrl.deposits | orderBy:predicate">
+    <td><span class="outlined-label">{{deposit.id}}</span></td>
+    <td>{{deposit.created_at | date:'yyyy-MM-dd HH:mm' }}</td>
+    <td>{{deposit.fund_extra}} @ {{deposit.fund_uid}}</td>
+    <td>{{deposit.amount}}</td>
+    <td>{{"funds.deposit_history." + deposit.aasm_state | t}}
+      <span ng-if="dhCtrl.canCancel(deposit.aasm_state)">/
+        <a ng-click="dhCtrl.cancelDeposit(deposit); $event.preventDefault()" href="#" class="cancel_link">{{ "funds.deposit_history.cancel" | t }}</a>
+      </span>
+    </td>
+  </tr>
+  <tr ng-show="dhCtrl.canCancel(deposit.aasm_state)"><td colspan="6"><span class="help-block text-center">{{ "funds.deposit_history.no_data" | t }}</span></td></tr>
+</table>
+
