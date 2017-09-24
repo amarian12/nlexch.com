@@ -610,9 +610,10 @@ header {
   top: $gutter; left: $gutter;
   width: $market-list-width; height: $market-list-height;
   z-index: 999;
-
+  
   .panel-body-content {
     height: $market-list-height - $panel_table_header_high;
+    width: $market-list-width;
 
     td.price {
       .fill { color: #333; }
