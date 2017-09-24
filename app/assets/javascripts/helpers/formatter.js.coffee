@@ -62,7 +62,7 @@ class Formatter
     price.replace(/\..*/, "<g>$&</g>")
 
   mask_fixed_price: (price) ->
-    @mask_price @fixPriceGroup(price)
+    @fixPriceGroup(price)
 
   ticker_fill: ['', '0', '00', '000', '0000', '00000', '000000', '0000000', '00000000']
   ticker_price: (price, fillTo=6) ->
@@ -84,7 +84,7 @@ class Formatter
     "#{m.format("YYYY/MM/DD HH:mm")}"
 
   mask_fixed_volume: (volume) ->
-    @.fixAsk(volume).replace(/\..*/, "<g>$&</g>")
+    @.fixAsk(volume)
 
   fix_ask: (volume) ->
     @.fixAsk volume
@@ -94,7 +94,7 @@ class Formatter
 
   amount: (amount, price) ->
     val = (new BigNumber(amount)).times(new BigNumber(price))
-    @.fixAsk(val).replace(/\..*/, "<g>$&</g>")
+    @.fixAsk(val)
 
   trend: (type) ->
     if @.check_trend(type)

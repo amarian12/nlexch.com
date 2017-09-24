@@ -20,7 +20,7 @@ window.MarketSwitchUI = flight.component ->
 
     select.find('td.price')
       .attr('title', ticker.last)
-      .html("<span class='#{trend}'>#{formatter.ticker_price ticker.last}</span>")
+      .html("<span class='#{trend}'>#{formatter.fixBid ticker.last}</span>")
 
     p1 = parseFloat(ticker.open)
     p2 = parseFloat(ticker.last)

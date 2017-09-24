@@ -245,7 +245,7 @@ INDICATOR = {MA: false, EMA: false}
             align: 'right'
             x: 2
             y: 3
-            zIndex: -7
+            zIndex: 7
           gridLineColor: '#222'
           gridLineDashStyle: 'ShortDot'
           top: "0%"
