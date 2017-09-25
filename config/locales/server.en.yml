@@ -783,8 +783,8 @@ en:
         cancel: CANCEL
         cancel_confirm: Are your sure cancel order?
         confirm: CONFIRM
-        ask_order: 'ASK ##sn#'
-        bid_order: 'BID ##sn#'
+        ask_order: 'Ask ##sn#'
+        bid_order: 'Bid ##sn#'
         my_active_order: Active
         my_done_order: Done
         trades: Trading
@@ -818,8 +818,8 @@ en:
         bid_orders: Buy
       ticker:
         last: Last Price
-        ask: ASK
-        bid: BID
+        ask: Ask
+        bid: Bid
       account_balance:
         title: Account Balance
         available: Available %{currency}
@@ -845,8 +845,8 @@ en:
         volume: Volume
         price: Price
         amount: Amount
-        ask: ASK
-        bid: BID
+        ask: Ask
+        bid: Bid
         fade_toggle_depth: Market Depth
       trade_state:
         new: New

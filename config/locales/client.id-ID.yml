@@ -1,4 +1,4 @@
-en:
+id-ID:
   js:
     brand: Peatio
     submit: Ajukan
@@ -85,7 +85,7 @@ en:
         confirmations: Konfirmasi
         from: Dari
         amount: Jumlah
-        state_and_action: "Kondisi/Aksi"
+        state_and_action: "Status/Aksi"
         cancel: batal
         no_data: Tidak ada data riwayat
 
@@ -122,7 +122,7 @@ en:
         amount: Jumlah
         manage_withdraw: Atur Alamat
         min: Sedikitnya
-        withdraw_all: Kirim semua
+        withdraw_all: Semua
         fee_explain: Tentang Biaya
 
       withdraw_history:
@@ -135,7 +135,7 @@ en:
         actual_amount: Jumlah Aktual
         fee: Biaya
         miner_fee: Biaya
-        state_and_action: "Kondisi/Aksi"
+        state_and_action: "Status/Aksi"
         cancel: Batal
         no_data: Tidak ada data riwayat
 

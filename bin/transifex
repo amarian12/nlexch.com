@@ -20,7 +20,7 @@ YML_FILE_COMMENTS = <<END
 END
 
 ALL_LOCALES = Dir.glob( File.expand_path("../../config/locales/client.*.yml", __FILE__) ).map {|x| x.split('.')[-2]}.sort
-LOCALE_MAPPINGS = [['zh-CN', 'zh_CN'], ['zh-TW', 'zh_TW']]
+LOCALE_MAPPINGS = [['zh-CN', 'zh_CN'], ['zh-TW', 'zh_TW'], ['id-ID', 'id_ID']]
 YML_DIRS = ['config/locales']
 
 def push

@@ -1,4 +1,4 @@
-en:
+id-ID:
   activerecord:
     models:
       api_tokens: API Token
@@ -41,10 +41,10 @@ en:
         en_title: English title
         en_desc: English description
         en_keywords: English keyword
-        id_body: Bahasa content
-        id_title: Bahasa title
-        id_desc: Bahasa description
-        id_keywords: Bahasa keyword
+        id_id_body: Bahasa content
+        id_id_title: Bahasa title
+        id_id_desc: Bahasa description
+        id_id_keywords: Bahasa keyword
         key: Key
         is_auth: Is Auth
       fund_source:
@@ -521,11 +521,11 @@ en:
         currency: Mata Uang
         buy: Beli
         sell: Jual
-        filter_by_type: Filter tipe
+        filter_by_type: Filter Tipe
         account_history: Riwayat Akun
-        type: tipe
-        timestamp: tanggal dan waktu
-        fee: biaya
+        type: Tipe
+        timestamp: Waktu
+        fee: Biaya
         currency: Mata Uang
         amount: Jumlah
         txid: Txid
@@ -935,8 +935,7 @@ en:
           verified: Terverifikasi
         asset_passwords:
           title: Kata Sandi Aset
-          description: Kata sandi aset akan diperlukan ketika anda ingin menarik uang anda.
-          Disarankan untuk tidak menggunakan kata sandi yang sama dengan akun anda.
+          description: Kata sandi aset akan diperlukan ketika anda ingin menarik uang anda. Disarankan untuk tidak menggunakan kata sandi yang sama dengan akun anda.
           go: Set
         passwords:
           title: Kata Sandi
@@ -1059,7 +1058,7 @@ en:
         password: Silahkan masukkan kata sandi anda
         password_confirmation: Konfirm kata sandi anda
         edit:
-          password: Silahkan masukkan kata sandi anda!
+          password: Silahkan masukkan kata sandi anda
       document:
         key: Kunci URL tautan dokumen
         title: Judul Dokumen
