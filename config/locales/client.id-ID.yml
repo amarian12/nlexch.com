@@ -86,7 +86,7 @@ id-ID:
         from: Dari
         amount: Jumlah
         state_and_action: "Status/Aksi"
-        cancel: batal
+        cancel: Batal
         no_data: Tidak ada data riwayat
 
         submitting: Mengajukan

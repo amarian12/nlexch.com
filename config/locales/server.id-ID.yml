@@ -784,7 +784,7 @@ id-ID:
         trades: Trading
         chat: Chat Channel
       market_list:
-        all: Semua Pasar
+        all: Pasar
         all_html: "<i class='fa fa-check'></i><span>Semua Pasar</span>"
         cny_html: "<i class='fa fa-check'></i><span>Pasar CNY</span>"
         btc_html: "<i class='fa fa-check'></i><span>Pasar BTC</span>"
@@ -861,7 +861,7 @@ id-ID:
         change: Change
       settings:
         sound: Suara
-        notification: Notifikasi
+        notification: Notify
         funds: "Dana"
         signout: "Keluar"
         settings: "Profil"
@@ -870,7 +870,7 @@ id-ID:
         title: Ringkasan
         account: Akun
         amount: Jumlah
-        locked: Dibekukan
+        locked: Beku
         view_all_accounts: "Lihat Semua"
         hide_all_accounts: "Sembunyikan Yang Lain"
       my_orders:
@@ -962,7 +962,7 @@ id-ID:
         enter_passcode: Masukkan dan ajukan passcode yang digenerasi oleh aplikasi Google Authenticator.
     shared:
       balances:
-        locked: Dibekukan
+        locked: Beku
         balance: Saldo
         available: Tersedia
         title: "Akun %{icon} %{c}"
@@ -1132,7 +1132,7 @@ id-ID:
       reset_password:
         password: Password Baru
       ticket:
-        content: Lihat detil
+        content: Detil
       withdraw:
         bank:
           fund_extra: Bank
