@@ -889,8 +889,8 @@ id-ID:
         amount: Jumlah
         time: Waktu Peletakan
       mask:
-        warning: Mohon <a class=text-up href='/'>Daftar</a> atau <a class=text-up
-          href='/'>Masuk</a> untuk menggunakan
+        warning: Mohon <a class=text-up href='/signup'>Daftar</a> atau <a class=text-up
+          href='/signin'>Masuk</a> untuk menggunakan
       klime_chart:
         title: Candlestick Charts
       global:
@@ -1053,8 +1053,8 @@ id-ID:
         password: Kata Sandi
       identity:
         email: Contoh：saputra@contoh.co.id
-        password: Silahkan masukkan kata sandi anda
-        password_confirmation: Konfirm kata sandi anda
+        password: Masukkan kata sandi anda
+        password_confirmation: Konfirmasi kata sandi anda
         edit:
           password: Silahkan masukkan kata sandi anda
       document:
@@ -1128,7 +1128,7 @@ id-ID:
         email: Email Masuk
         old_password: Password Lama
         password: Password Baru
-        password_confirmation: Konfirmasi password baru
+        password_confirmation: Konfirmasi Password Baru
       reset_password:
         password: Password Baru
       ticket:
@@ -1150,7 +1150,7 @@ id-ID:
     deposits:
       banks:
         index:
-          oneday: Requests in the last 24 hours
+          oneday: Requests in the last 48 hours
           available: All Pending Requests
         show:
           alert: Recharge cannot be located.
@@ -1243,7 +1243,7 @@ id-ID:
       satoshis:
         index:
           one: Pending withdrawals
-          all: Last 24 hours
+          all: Last 48 hours
           empty: No data
         show:
           process: Accepted
@@ -1764,7 +1764,7 @@ id-ID:
     index:
       verify: Verifikasi
     update:
-      alert: Kode verifikasi Two factor error, silahkan masukkan kembali.
+      alert: Kode verifikasi two factor error, silahkan masukkan kembali.
     auth:
       please_active_two_factor: Silahkan set nomor telepon atau google authenticator terlebih dahulu.
       submit: Ajukan

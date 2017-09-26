@@ -25,9 +25,9 @@ id-ID:
       bos: Bank of Shanghai
     fund_sources:
       manage_bank_account: Manajemen Rekening Bank
-      manage_bank_account_desc: Untuk memfasilitasi pemilihan rekening bank untuk penarikan 
+      manage_bank_account_desc: Untuk memfasilitasi pemilihan rekening bank untuk penyetoran dan penarikan 
       manage_coin_address: Manajemen Alamat Mata Uang Digital
-      manage_coin_address_desc: Untuk memfasilitasi pemilihan alamat mata uang digital untuk penarikan
+      manage_coin_address_desc: Untuk memfasilitasi pemilihan alamat mata uang digital untuk penyetoran dan penarikan
       bank: Bank
       account: Rekening Bank
       label: Label
@@ -107,7 +107,7 @@ id-ID:
         withdraw_address: Rekening Penarikan
         balance: Saldo
         withdraw_amount: Jumlah Penarikan
-        manage_withdraw: Atur Penarikan
+        manage_withdraw: Atur Rekening
         fee_explain: Tentang Biaya
         min: Paling sedikit
         withdraw_all: Tarik semua
