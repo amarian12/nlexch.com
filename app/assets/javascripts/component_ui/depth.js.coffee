@@ -46,7 +46,7 @@
         headerFormat:
           """
           <table class=depths-table><tr>
-            <th><span>{series.name}</span> #{gon.i18n.chart.price}</th><th>#{gon.i18n.chart.depth}</th>
+            <th>#{gon.i18n.chart.price} <span>{series.name}</span></th><th>#{gon.i18n.chart.depth}</th>
           </tr>
           """
         pointFormat: '<tr><td>{point.x}</td><td>{point.y}</td></tr>'

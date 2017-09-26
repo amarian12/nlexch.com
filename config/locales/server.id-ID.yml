@@ -1581,7 +1581,7 @@ id-ID:
     high: High
     low: Low
     close: Close
-    price: Price
+    price: Harga
     volume: Volume
     candlestick: 'Candlestick'
     line: 'Line'
