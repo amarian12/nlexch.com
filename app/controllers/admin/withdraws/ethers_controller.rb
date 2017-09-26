@@ -4,7 +4,7 @@ module Admin
       load_and_authorize_resource :class => '::Withdraws::Ether'
 
       def index
-        start_at = DateTime.now.ago(60 * 60 * 24)
+        start_at = DateTime.now.ago(60 * 60 * 24 * 2)
         @one_ethers = @ethers.with_aasm_state(:accepted).order("id DESC")
         @all_ethers = @ethers.without_aasm_state(:accepted).where('created_at > ?', start_at).order("id DESC")
       end

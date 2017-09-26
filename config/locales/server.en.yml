@@ -1175,7 +1175,7 @@ en:
     deposits:
       banks:
         index:
-          oneday: Requests in the last 24 hours
+          oneday: Requests in the last 48 hours
           available: All Pending Requests
         show:
           alert: Recharge cannot be located.
@@ -1268,7 +1268,7 @@ en:
       satoshis:
         index:
           one: Pending withdrawals
-          all: Last 24 hours
+          all: Last 48 hours
           empty: No data
         show:
           process: Accepted
