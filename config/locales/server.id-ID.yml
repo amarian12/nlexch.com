@@ -956,7 +956,7 @@ id-ID:
         step_2: Langkah 2
         step_3: Langkah 3
         or: ATAU
-        download_app: Pasang aplikasi Google Authenticator pada smartphone anda dan buka.
+        download_app: Instal aplikasi Google Authenticator pada smartphone anda dan buka.
         scan_qr_code: Pindai kode QR dibawah
         enter_passphrase: Secara manual masukkan kunci berikut pada aplikasi
         enter_passcode: Masukkan dan ajukan passcode yang digenerasi oleh aplikasi Google Authenticator.
@@ -1557,7 +1557,7 @@ id-ID:
     submit: Ajukan
     deposit: Setor
     select: Silahkan Pilih
-    unlock: Unlock
+    unlock: Buka Kunci
     confirm: Konfirmasi
     back: Kembali
     block: lihat dalam block
@@ -1642,47 +1642,45 @@ id-ID:
         create: Submit
   activations:
     new:
-      notice: An email has been sent to your mailbox, please check it for verification as soon as possible. If you do not received it , please click "send it again" button.
-      verified: Your email adress has been verified successfully.
-      login_required: login required!
-      tip: Activation link was sent to %{email}
-      spam: Please check your spam folder for the activation link.
+      notice: Email telah dikirimkan ke kotak surat anda, silahkan periksa untuk verifikasi segera. Jika anda tidak menerimanya, silahkan klik tombol "Kirim Lagi".
+      verified: Alamat email anda berhasil diverifikasi.
+      login_required: login diperlukan!
+      tip: Tautan aktifasi terikirim ke %{email}
+      spam: Silahkan periksa folder spam anda untuk menemukan tautan aktivasi.
     edit:
-      notice: Account activated successfully! Please sign in below.
-      alert: Activation link is expired or invalid.
+      notice: Akun berhasil diaktivasi! Silahkan masuk di bawah.
+      alert: Tautan aktivasi telah berakhir atau tidak valid.
   authentications:
     emails:
       new:
-        title: Setup Email
-        setup_email: Please setup your email address.
-        warning: Please check your inbox after saving the email address.
-        email_address: Email Address
-        save: Save
+        title: Atur Email
+        setup_email: Silahkan atur alamat email anda.
+        warning: Silahkan periksa kotak masuk anda setelah menyimpan alamat email.
+        email_address: Alamat Email
+        save: Simpan
     weibo:
       destroy:
         last_auth_alert: You couldn't delete the last authentication
         unbind_success: Unbind from the Weibo
     identities:
       new:
-        title: Setup The Password
-        save: Save
+        title: Atur Kata Sandi
+        save: Simpan
       create:
-        success: Setup password successfully
+        success: Pengaturan kata sandi berhasil
   forum:
     index:
       notice:
-        display_name: Please set your display name for the forum.
+        display_name: Silahkan atur nama tampilan anda untuk forum.
   identities:
     new:
-      title: SIGN UP
-      signin: Sign In
-      password: Please enter a password at least 6 characters and it's better to contain
-        uppercase and lowercase letters and numbers.
+      title: DAFTAR
+      signin: Masuk
+      password: Silahkan masukkan kata sandi sedikitnya 6 karakter dan disarankan mengandung huruf besar dan huruf kecil dan angka.
     update:
-      auth-error: The original password you entered is incorrect, please re-enter.
-      auth-same: The new password you entered is the same as the old password, please
-        re-enter.
-      notice: Account password updated successfully.
+      auth-error: Kata sandi lama yang anda masukkan salah, mohon ulangi.
+      auth-same: Kata sandi baru yang anda masukkan sama dengan kata sandi yang lama, mohon ulangi.
+      notice: Kata sandi akun anda berhasil diperbaharui.
   layouts:
     admin:
       menus:
@@ -1701,40 +1699,38 @@ id-ID:
           deposits:
             currency: Deposit
     application:
-      close: Close
+      close: Tutup
     meta:
       page_title: Peatio - The Opensource Cryptocurrency Exchange
       page_description: Peatio - The Opensource Cryptocurrency Exchange
       page_keywords: Peatio,Opensource,Exchange,Cryptocurrency
   members:
     edit:
-      name: Please fill out the application.
+      name: Mohon lengkapi aplikasi.
   reset_passwords:
     create:
-      success: E-mail to reset your password with a introduction has been sent to your mailbox. Failure to receive e-mail , go to "junk mail " firstly,or send the request again.
+      success: E-mail untuk mereset kata sandi anda telah dikirimkan ke kotak surat anda. Jika tidak menemukan, periksa "Spam" terlebih dahulu sebelumnya, atau kirim permintaan lagi.
     edit:
-      password: Please enter a password at least 6 characters and it's better to contain uppercase and lowercase letters and numbers.
-      invalid: Invalid request
+      password: Silahkan masukkan kata sandi sedikitnya 6 karakter dan disarankan mengandung huruf besar dan huruf kecil dan angka.
+      invalid: Request tidak valid
       submit: Reset Login Password
-      alert: Invalid reset password link.
+      alert: Tautan reset password tidak valid.
     update:
-      success: Login password has been reset, please keep your new password.
-      invalid: Invalid request
+      success: Kata sandi masuk anda telah direset, silahkan simpan kata sandi baru anda.
+      invalid: Request tidak valid
   sessions:
     new:
-      reset_password: Forgot Password?
+      reset_password: Lupa Password?
     new_with_two_factor_auth:
-      title: 2 Step Verification
-      reset_two_factor: Lost 2-step-verification device
+      title: Two Factor Verification
+      reset_two_factor: Kehilangan perangkat two factor verification
     create_with_two_factor_auth:
-      session_expired: Session expired. Try again.
+      session_expired: Session berakhir. Coba lagi.
     create:
-      error: You account has been disabled, contact admin if you have any problem.
+      error: Akun anda telah dinonaktifkan, kontak admin jika anda memiliki masalah.
     failure:
-      account_locked: Too many failed login attempts. To ensure the safety of your
-        account, we have locked your account. To unlock, reset your password by clicking
-        on "Forgot Password".
-      error: Wrong customer ID or password,please try again.
+      account_locked: Terlalu banyak cobaan masuk gagal. Untuk memastikan keamanan dari akun anda, kami mengunci akun anda. Untuk membuka kunci akun, reset kata sandi dengan mengklik pada "Lupa Password".
+      error: ID pengguna atau password salah, silahkan coba lagi.
   shared:
     admin:
       member:
@@ -1748,15 +1744,12 @@ id-ID:
         account_info: Account Info
         payment_address: Deposit Address
     alert:
-      modern: In order not to affect trading experience, please use a more popular
-        browser transaction, we recommend you <a target='_blank' href='https://www.google.com/#q=google+chrome'>Google
-        Chrome</a>。
-      pusher_unavailable: The network connection is temporarily unavailable... <a
-        href='#' class='alert-link'>Please refresh</a>.
+      modern: Agar pengalaman trading anda tidak terganggu, silahkan pakai browser yang lebih populer, kami merekomendasikan anda <a target='_blank' href='https://www.google.com/#q=google+chrome'>Google Chrome</a>。
+      pusher_unavailable: Koneksi jaringan terputus... <a href='#' class='alert-link'>Please refresh</a>.
     header:
-      balance: Balance
+      balance: Saldo
     header_account_balance:
-      locked: Locked
+      locked: Beku
     market:
       ticker:
         ask_price: Ask
@@ -1766,120 +1759,113 @@ id-ID:
         volume: Volume
         latest_price: Last
     frame:
-      deposit_now: Deposit Now
+      deposit_now: Setor Sekarang
   two_factors:
     index:
-      verify: Verify
+      verify: Verifikasi
     update:
-      alert: Two factor verification code error, please re-enter.
+      alert: Kode verifikasi Two factor error, silahkan masukkan kembali.
     auth:
-      please_active_two_factor: Please set mobile number or google authenticator first.
-      submit: Submit
-      otp_placeholder: 6-digit password
+      please_active_two_factor: Silahkan set nomor telepon atau google authenticator terlebih dahulu.
+      submit: Ajukan
+      otp_placeholder: Kata sandi 6-digit
       google_app: Google Authenticator
-      sms: SMS Verification Messages
-      send_code: Send Code
-      send_code_alt: Resend in COUNT seconds
+      sms: Pesan Verifikasi SMS
+      send_code: Kirim Kode
+      send_code_alt: Kirim ulang dalam COUNT detik
       hints:
-        app: Google Authenticator will re-generate a new password every thirty seconds,
-          please input timely.
-        sms: We'll send a text message to you phone with verify code.
+        app: Google Authenticator akan membuat kata sandi baru setiap 30 detik, silahkan masukkan tepat waktu.
+        sms: Kami akan mengirimkan pesan teks ke telepon anda berisi kode verifikasi.
   verify:
     google_auths:
       edit:
-        submit: Disable
-        warning: 'Tip: If you have lost your Two-Factor Authentication by some reason
-          and can''t login your Peatio account, please contact our online customer
-          service.'
+        submit: Nonaktifkan
+        warning: 'Tip: Jika anda kehilangan Two-Factor Authentication anda dan tidak dapat masuk ke akun Peatio, mohon hubungi layanan pengguna kami.'
       show:
-        step-1: Step 1
-        step-2: Step 2
-        step-3: Step 3
-        or: OR
-        download-app: Install Google Authenticator app on your smart phone and open
-          it.
+        step-1: Langkah 1
+        step-2: Langkah 2
+        step-3: Langkah 3
+        or: ATAU
+        download-app: Install Google Authenticator app pada smart phone dan buka.
         guide-link: "<a href='https://support.google.com/accounts/answer/1066447'
-          target='_blank'>Installation Instructions</a>。"
-        scan-qr-code: Scan the following QR code with Google Authenticator APP，or
-          add cipher text to the validator manually.
-        enter-passcode: Fill in the dynamic password  displayed by your phone to activate Two-Factor Authentication.
-        submit: Enable
+          target='_blank'>Instruksi Instalasi</a>。"
+        scan-qr-code: Pindai kode QR dibawah menggunakan Google Authenticator APP，atau ketik cipher text ke dalam validator secara manual.
+        enter-passcode: Masukkan kata sandi dinamis yang ditampilkan pada smartphone anda untuk mengaktivasi Two-Factor Authentication.
+        submit: Aktifkan
         ios: iOS
         android: Android
         blackbery: Blackberry
         notice:
-          already_activated: The Google Authenticator has already been set.
-          not_activated_yet: The Google Authenticator hasn't been set yet.
+          already_activated: The Google Authenticator sudah terpasang.
+          not_activated_yet: The Google Authenticator belum terpasang.
       update:
-        alert: Password for authentication is incorrect, please re-enter.
-        notice: Two-Factor Authentication has been successfully Enabled.
-        sms_two_factor_error: SMS Verification code is incorrect, please re-enter.
+        alert: Kata sandi untuk otentikasi salah, silahkan masukkan kembali.
+        notice: Two-Factor Authentication telah berhasil diaktifkan.
+        sms_two_factor_error: Kode verifikasi SMS salah, silahkan masukkan kembali.
       destroy:
-        alert: Password for authentication is incorrect, please re-enter.
-        notice: Two-Factor Authentication has been successfully Disabled.
+        alert: Kata sandi untuk otentikasi salah, silahkan masukkan kembali.
+        notice: Two-Factor Authentication telah berhasil dinonaktifkan.
     sms_auths:
       show:
-        title: Verify Phone Number
-        description: Providing a phone number will make your account more secure. you
-          can quickly reset your password and your account operations will be notified.
-        warning: it will not be able to retrieve your account's password if not set
-          the phone number.
-        phone_number: Phone number
-        send_code: Send Code
-        send_code_alt: Resend in COUNT seconds
-        input_otp: Enter the 6-digit code we sent to you
-        submit: Save
+        title: Verifikasi Nomor Telepon
+        description: Menyediakan nomor telepon anda membuat akun anda lebih aman. Anda dapat dengan cepat mereset password dan operasi akun anda akan dinotifikasi.
+        warning: tidak dapat mendapatkan password akun anda jika nomor telepon tidak di set.
+        phone_number: Nomor telepon
+        send_code: Kirim Kode
+        send_code_alt: Kirim ulang dalam COUNT detik
+        input_otp: Masukkan kode 6-digit yang kami kirimkan kepada anda
+        submit: Simpan
         notice:
-          send_code_success: Send verify code success
-          otp_success: Verify Code success.
-          already_activated: You phone number has been activated.
+          send_code_success: Pengiriman kode verifikasi berhasil
+          otp_success: Verifikasi kode sukses.
+          already_activated: Nomor telepon anda telah teraktivasi.
         alert:
-          phone_number_error: phone number error
+          phone_number_error: nomor telepon error
   withdraw_channel:
     bank:
-      key: Bank Transfer
-      title: Bank Transfer
-      intro: Bank transfer deposits, Recommend for large recharge
-      latency: 30 minutes
+      key: Transfer Bank
+      title: Transfer Bank
+      intro: Tarik transfer bank, disarankan untuk jumlah besar
+      latency: 30 menit
       transfer: Manual
-      go: Withdraw
+      go: Tarik
     satoshi:
       key: Blockchain
       title: Bitcoin Blockchain
-      intro: Withdraw Bitcoin to your own Bitcoin wallet
-      latency: 30 minutes
+      intro: Tarik bitcoin ke dompet anda
+      latency: 30 menit
       transfer: Manual
-      go: Withdraw
+      go: Tarik
     ether:
       key: Ether
       title: Ether Blockchain
-      intro: Withdraw Litecoin to your own Ether wallet
-      latency: 30 minutes
+      intro: Tarik Ethereum ke dompet Ether anda
+      latency: 30 menit
       transfer: Manual
-      go: Withdraw
+      go: Tarik
   withdraws:
-    invalid_address: is not valid. You can not withdraw to this address.
+    invalid_address: tidak valid. Anda tidak bisa tarik ke alamat ini.
   withdraws/bank:
     aasm_state:
-      submitting: Submitting
-      submitted: Submitted
-      rejected: Rejected
-      accepted: Accepted
-      suspect: Suspect
-      processing: Processing
-      done: Done
-      almost_done: Almost Done
-      canceled: Canceld
-      failed: Failed
+      submitting: Mengajukan
+      submitted: Diajukan
+      rejected: Ditolak
+      accepted: Disetujui
+      suspect: Dicurigai
+      processing: Diproses
+      done: Selesai
+      almost_done: Hampir Selesai
+      canceled: Dibatalkan
+      failed: Gagal
   withdraws/satoshi:
     aasm_state:
-      submitting: Submitting
-      submitted: Submitted
-      rejected: Rejected
-      accepted: Accepted
-      suspect: Suspect
-      processing: processing
-      done: Done
-      almost_done: Almost Done
-      canceled: Cancelled
-      failed: Failed
+      submitting: Mengajukan
+      submitted: Diajukan
+      rejected: Ditolak
+      accepted: Disetujui
+      suspect: Dicurigai
+      processing: Diproses
+      done: Selesai
+      almost_done: Hampir Selesai
+      canceled: Dibatalkan
+      failed: Gagal
