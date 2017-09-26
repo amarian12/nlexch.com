@@ -20,6 +20,10 @@
       else if ticker = @tickers["#{currency}#{fiatCurrency}"]
         sum += +account.balance * +ticker.last
         sum += +account.locked * +ticker.last
+      else if ((ticker = @tickers["#{currency}#{btc}"]) && (btcticker = @tickers["#{btc}#{fiatCurrency}"]))
+        sum += +account.balance * +ticker.last * + btcticker.last
+        sum += +account.locked * +ticker.last * + btcticker.last
+
 
     @select('total_assets').text "#{symbol}#{formatter.round sum, 2}"
 
