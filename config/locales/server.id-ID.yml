@@ -1,0 +1,1871 @@
+id-ID:
+  activerecord:
+    models:
+      api_tokens: API Token
+      trade: Trades
+      order: Orders
+      order_bid: BID
+      order_ask: ASK
+      document: Document
+      withdraw: Withdraw
+      deposit: Deposit
+      payment_transaction: Payment
+      id_document: ID Document
+      statistic/orders_grid: Orders Stat
+      statistic/trades_grid: Trading Stat
+      statistic/members_grid: Members Stat
+      statistic/deposits_grid: Deposits Stat
+      statistic/withdraws_grid: Withdraws Stat
+      admin/deposits_grid: Deposits
+      admin/withdraws_grid: Withdraws
+      deposits/bank: Deposit Bank
+      withdraws/bank: Withdraw Bank
+      withdraws/satoshi: Withdraw
+    attributes:
+      api_token:
+        access_key: Access Key
+        trusted_ip_list: IP Whitelist
+        ip_whitelist: IP Whitelist
+        label: Label
+        actions: Aksi
+      identity:
+        email: Email
+        password: Password Baru
+        password_confirmation: Konfirmasi Password
+      document:
+        zh_cn_body: Konten Chinese
+        zh_cn_title: Judul Chinese
+        zh_cn_desc: Deskripsi Chinese
+        zh_cn_keywords: Keyword Chinese
+        en_body: Konten English content
+        en_title: Judul English title
+        en_desc: English description
+        en_keywords: Keyword English
+        id_id_body: Konten Bahasa
+        id_id_title: Judul Bahasa
+        id_id_desc: Deskripsi Bahasa
+        id_id_keywords: Keyword Bahasa
+        key: Key
+        is_auth: Is Auth
+      fund_source:
+        address: Alamat
+        category: Kategori
+        label: Label
+      account:
+        currency: Mata Uang
+        currency_text: Mata Uang
+        balance_and_locked: Saldo / Beku
+        balance: Saldo
+        locked: Beku
+      deposit:
+        state: Status
+        tx_id: TxID
+        member_id: Member ID
+        created_at: Diajukan Pada
+        address: Alamat
+        amount: Jumlah
+        done_at: Selesai Pada
+        sn: SN
+      withdraw:
+        id: ID
+        sn: SN
+        withdraw_id: ID
+        created_at: Dibuat PADA
+        done_at: Selesai pada
+        sum: Sum
+        fee: Biaya
+        currency: Mata Uang
+        amount: Jumlah
+        address: Alamat
+        state: Status
+        state_text: Status
+        tx_id: TxID
+        fund_source_id: Alamat Penarikan
+        detail: Detil
+      account_version:
+        id: ID
+        locked: Beku
+        amount: Jumlah
+        balance: Saldo
+        reason: Alasan
+        reason_text: Alasan
+        modifiable_id: LINK ID
+        modifiable_type: LINK
+        created_at: Dibuat Pada
+        in: Masuk
+        out: Keluar
+        fee: Biaya
+      token/reset_password:
+        email: Email masuk
+        member: Member
+      trade:
+        bid: Beli
+        ask: Jual
+        fee: Biaya
+        price: Harga Strike
+        volume: Volume Strike 
+        category: Beli/Jual
+        order: Order
+      order:
+        bid: Beli
+        ask: Jual
+        price: Harga
+        total: Total
+        volume: Volume
+        origin_volume: Volume
+        sum: Sum
+        category: Beli/Jual
+        kind: Jenis
+        at: Pada
+        id: ID
+        state: Status
+        operation: Tindakan
+      payment_transaction:
+        at: Waktu
+        txid: Transaction ID
+        amount: Jumlah
+        confirmations: Confirmations
+        state: Status
+        state_done: Selesai
+        state_wait: Tunggu
+      member:
+        id: ID
+        name: Nama
+        display_name: Nama Tampilan
+        email: Email
+        created_at: Mendaftar pada
+        sn: SN
+        id_document_number: Nomor Dokumen Id
+        tag_list: Tags
+        activated: Teraktivasi
+        activated?: "Teraktivasi?"
+        id_document_verified?: "Dokumen Id Terverifikasi?"
+        two_factor_activated?: "Two Factor Teraktivasi?"
+        phone_number: Nomor Telepon
+      two_factor/sms:
+        country: Negara
+        phone_number: Nomor Telepon
+        otp: Code Verifikasi
+      withdraws/bank:
+        id: ID
+        member_name: Member
+        currency_obj_key_text: Mata Uang
+        state_and_actions: Status/Aksi
+        fund_source: Bank
+        fund_extra: Bank
+        fund_extra_text: Bank
+        fund_uid: Rekening Bank
+        sum: Jumlah
+        fee: Biaya
+        amount: Jumlah
+        remark: Remark
+        created_at: Dibuat Pada
+      deposits/bank:
+        created_at: Dibuat Pada
+        holder: Pemilik
+        fund_extra: Bank Pengirim
+        fund_uid: Rekening Pengirim
+        member_sn: Member SN
+        member_name: Nama Pengirim
+        amount: Jumlah
+        sn: SN
+        state_and_action: Status/Aksi
+        label: Label
+        fund_source: Sumber Dana
+      deposits/satoshi:
+        created_at: Dibuat Pada
+        txid: Transaction ID
+        amount: Jumlah
+        confirmations: Konfirmasi
+        aasm_state_text: Status
+      withdraws/satoshi:
+        id: ID
+        member_name: Account
+        currency_obj_key_text: Mata Uang
+        state_and_actions: Status/Aksi
+        fund_extra_text: Label Penarikan
+        fund_extrat: Label Penarikan
+        fund_source: Bank
+        fund_uid: Rekening
+        created_at: Dibuat Pada
+        sum: Jumlah
+        amount: Jumlah
+        remark: Remark
+        fee: Biaya
+    errors:
+      models:
+        order_bid:
+          attributes:
+            sum:
+              expensive: Expensive Account
+            price:
+              range: Rentang Harga Tidak Valid
+        order_ask:
+          attributes:
+            origin_volume:
+              expensive: Expensive Account
+            price:
+              range: Rentang Harga Tidak Valid
+        account:
+          attributes:
+            balance:
+              less: Saldo Kurang
+        identity:
+          attributes:
+            email:
+              invalid: Email Salah
+            password:
+              invalid: Password Salah
+            password_confirmation:
+              confirmation: Berbeda dengan password yang anda masukkan, silahkan masukkan kembali.
+        token/reset_password:
+          attributes:
+            base:
+              too_soon: Datang terlalu sering, coba lagi beberapa saat.
+            email:
+              not-member: Email Salah
+              match: Email Masuk Salah
+            password:
+              invalid: Kata Sandi Salah
+            member:
+              blank: Tidak ditemukan
+        activation:
+          attributes:
+            base:
+              too_soon: Email aktivasi telah dikirimkan ke alamat email anda 5 menit yang lalu.
+        fund_source:
+          attributes:
+            address:
+              satoshi_ismine: Alamat Terpakai
+              satoshi_invalid: Alamat Salah
+        withdraw:
+          account_balance_is_poor: Saldo akun tidak cukup
+          attributes:
+            password:
+              match: salah
+            amount:
+              poor: kurang banyak
+              bank_min: Kurang 50000
+        withdraws/satoshi:
+          attributes:
+            fund_uid:
+              blank: Mohon masukkan alamat penarikan
+              invalid: Alamat penarikan salah, mohon periksa kembali.
+              ismine: Mohon gunakan alamat lain.
+        two_factor:
+          attributes:
+            otp:
+              invalid: Password Salah. Mohon coba lagi.
+        application:
+          attributes:
+            redirect_uri:
+              fragment_present: tidak boleh mengandung fragmen.
+              invalid_uri: URI haruslah valid.
+              relative_uri: URI haruslah absolut.
+      messages:
+        invalid_email: Alamat Email Salah
+        undef: unknown reason
+        less: saldo kurang
+        verify: verifikasi error
+        strength: adalah password yang kurang kuat
+        password: Silahkan masukkan kata sandi sedikitnya 6 karakter dan disarankan mengandung huruf besar dan huruf kecil dan angka.
+        orders:
+          price: limit price %{l} ~ %{h}
+          sum: limit sum price %{l} ~ %{h}
+          precision: minimum precision %{p}
+  banks:
+    icbc: Industryand Commercial Bank of China
+    cbc: Construction Bank of China
+    bc: Bank of China
+    bcm: Bank of Communications
+    abc: Agriculture Bank of China
+    cmb: China Merchants Bank Ltd
+    cmbc: China Minsheng Banking Co., Ltd
+    cncb: China CITIC Bank
+    hxb: Hua Xia Bank Co., Ltd.
+    cib: Industrial Bank Co., Ltd
+    spdb: Shanghai Pudong Development Bank
+    bob: Bank of Beijing
+    ceb: China Everbright Bank CO.LTD
+    sdb: Shenzhen Development Bank
+    pab: Ping An Bank Co., Ltd.
+    gdb: Guangdong Development Bank
+    psbc: Postal Savings Bank of China
+  market:
+    currency:
+      btc: BTC
+      eth: ETH
+      cny: CNY
+      doge: DOGE
+      pts: PTS
+      ltc: LTC
+  currency:
+    satoshi:
+      key: BTC
+      code: BTC
+      name: Bitcoin
+      format: '0,0.0000'
+    ether:
+      key: ETH
+      code: ETH
+      name: Ethereum
+      format: '0,0.0000'
+    bitsharesx:
+      key: BTS
+      code: BTSX
+      name: BitsharesX
+      format: '0,0.0000'
+    renminbi:
+      key: CNY
+      code: CNY
+      name: Chinese Yuan
+      format: '0,0.00'
+    dogecoin:
+      key: DOG
+      code: DOGE
+      name: Dogecoin
+      format: '0,0.0000'
+    protoshare:
+      key: PTS
+      code: PTS
+      name: Protoshare
+      format: '0,0.0000'
+  datagrid:
+    empty: no data found
+    filters:
+      date:
+        range_separator: " to "
+      datetime:
+        range_separator: " to "
+    form:
+      submit: Search
+    admin_deposits_grid:
+      columns:
+        sn: SN
+        created_at: At
+        channel_key_text: Channel
+        fund_extra_text: Extra
+        fund_uid: UID
+        txid: TXID
+        amount: Amount
+        fee: Fee
+        currency_text: Currency
+        aasm_state_text: State
+        member_name: Member
+    bank_deposits_grid:
+      columns:
+        sn: SN
+        created_at: At
+        channel_key_text: Category
+        fund_extra_text: Bank
+        fund_uid: Account
+        amount: Amount
+        fee: Fee
+        aasm_state_text: State
+    coin_deposits_grid:
+      columns:
+        sn: SN
+        txid: Transaction ID
+        created_at: At
+        amount: Amount
+        aasm_state_text: State
+        confirmations: Confirm
+    withdraws_grid:
+      columns:
+        sn: SN
+        name: Name
+        currency_text: Currency
+        amount: Amount
+        fee: Fee
+        created_at: Created at
+        done_at: Completed at
+        state_text: State
+    members_grid:
+      columns:
+        sn: Serial number
+        email: Email
+        created_at: Created at
+        actions: Actions
+    account_versions_grid:
+      columns:
+        created_at: Created at
+        currency_text: Currency
+        balance: Balance
+        in: In
+        out: Out
+        amount: Amount
+        reason_text: Reason
+        modifiable_type: Link
+        fee: Fee
+      filters:
+        reason: Reason
+        currency: Currency
+    statistic_members_grid:
+      columns:
+        sn: Serial number
+        id: ID
+        email: Email
+        created_at: Created at
+        activated: Active
+        detail: Detail
+        action: Action
+      filters:
+        sn: Serial number
+        activated: Active
+        created_at: Created at
+        email: Email
+    statistic_orders_grid:
+      columns:
+        id: Serial number
+        price: Price
+        volume: Volume
+        created_at: Created at
+        state_text: State
+        member_id: Member
+      filters:
+        state: State
+        currency: Currency
+        created_at: Created at
+        type: Ask/Bid
+    statistic_trades_grid:
+      columns:
+        id: ID
+        price: Price
+        volume: Volume
+        strike_amount: Amount
+        created_at: Created at
+      filters:
+        currency: Currency
+        created_at: Created at
+    statistic_deposits_grid:
+      columns:
+        member: Member
+        tx_id: TxID
+        amount: Amount
+        currency: Currency
+        created_at: Created at
+        state_text: State
+      filters:
+        currency: Currency
+        state: State
+        created_at: Created at
+    statistic_withdraws_grid:
+      columns:
+        member: Member
+        address: Adress
+        amount: Amount
+        currency: Currency
+        created_at: Created at
+        state_text: State
+      filters:
+        state: State
+        created_at: Created at
+  deposit_channel:
+    bank:
+      key: Transfer bank
+      title: Transfer Bank
+      intro: Penyetoran transfer bank, disarankan untuk jumlah besar
+      latency: 15 menit - 1 hari
+      transfer: Manual
+      go: Setor
+    satoshi:
+      key: Block Chain
+      title: Penyetoran Bitcoin
+      intro: Penyetoran bitcoin dari alamat dompet anda ke akun Peatio
+      latency: 1 konfirmasi
+      transfer: Manual
+      go: Setor
+    ether:
+      key: ethereum
+      title: Penyetoran Ethereum
+      intro: Penyetoran Ethereum dari alamat dompet anda ke akun Peatio
+      latency: 1 konfirmasi
+      transfer: Manual
+      go: Setor
+  deposits/bank:
+    aasm_state:
+      submitting: Mengajukan
+      cancelled: Dibatalkan
+      submitted: Diajukan
+      accepted: Disetujui
+      rejected: Ditolak
+      checked: Diperiksa
+      warning: Ditandai
+  private:
+    deposits:
+      satoshis:
+        gen_address:
+          require_transaction: Tidak dapat membuat alamat baru jika tidak pernah transaksi.
+      banks:
+        destroy:
+          notice: Ajuan pembatalan berhasil.
+        create:
+          notice: Ajuan pengisian berhasil diajukan. Gunakan informasi berikut untuk menyelesaikan transfer bank.
+          submit: Ajukan
+        new:
+          fund_source: Pilih Sumber Dana
+          manage_fund_source: Atur Sumber Dana
+          submit: Ajukan
+        edit:
+          bank: Nama Bank Penerimaan Receive Bank Name
+          branch: Cabang Bank Penerimaan Receive Bank Branch
+          hodler: Nama Penerima
+          account: Rekening Penerima
+    history:
+      transaction:
+        Deposit: Setor
+        Withdraw: Tarik
+      account:
+        currency: Mata Uang
+        buy: Beli
+        sell: Jual
+        filter_by_type: Filter Tipe
+        account_history: Riwayat Akun
+        type: Tipe
+        timestamp: Waktu
+        fee: Biaya
+        currency: Mata Uang
+        amount: Jumlah
+        txid: Txid
+      orders:
+        order_history: Riwayat Order
+        id: ID
+        type: Tipe
+        state: Kondisi
+        market: Pasar
+        price: Harga
+        volume: Volume
+        average_price: Harga Rerata
+        fullfilled_volume: Terpenuhi
+        timestamp: Dibuat Pada
+      order:
+        ask: Jual
+        bid: Beli
+        wait: Pending
+        cancel: Batal
+        done: Selesai
+      trades:
+        trade_history: Riwayat Trade
+        side: Side
+        created_at: Waktu
+        base_currency: Mata Uang Basis
+        base_amount: Jumlah Basis
+        quote_currency: Mata Uang Kutipan
+        quote_amount: Jumlah Kutipan
+        price: Harga
+      trade:
+        sell: Jual
+        buy: Beli
+    trade:
+      trades:
+        orders:
+          title: Order
+        trades:
+          title: Trade
+        charges:
+          title: Charge
+      orders:
+        index:
+          done: Selesai
+          cancel: Batal
+          confirm: 'Anda yakin ingin membatalkan order #%{id}?'
+        destroy:
+          'true': "#%{id} Pembatalan Order Sukses"
+          'false': "#%{id} Pembatalan Order Gagal"
+    withdraws:
+      update:
+        request_accepted: Ajuan penarikan disetujui
+      destroy:
+        request_canceled: Ajuan penarikan ditolak
+      index:
+        fee: Biaya
+        total: Total
+        withdraw_history: Riwayat Penarikan
+      create:
+        two_factors_error: Two-Factor Authentication gagal.
+      banks:
+        update:
+          notice: Aplikasi penarikan transfer bank telah diajukan, kami akan memprosesnya segera
+          alert_two_factor: Two-Factor Authentication error
+        destroy:
+          notice: Penarikan transfer bank dibatalkan, jumlah yang dibekukan telah dikembalikan ke akun anda.
+        new:
+          fund_source: Pilih Sumber Dana
+          manage_fund_source: Atur Sumber Dana
+          submit: Ajukan
+          allin: Semua
+        create:
+          notice: Permohonan penarikan berhasil diajukan. Gunakan informasi berikut untuk menlengkapi transfer bank.
+      satoshis:
+        destroy:
+          notice: Penarikan telah dibatalkan, jumlah yang dibekukan telah dikembalikan ke akun anda
+        update:
+          notice: Permohonan penarikan telah diajukan, kami akan memprosesnya segera
+          alert_two_factor: Two-Factor Authentication error
+        new:
+          submit: Ajukan
+          allin: Semua
+          fund_source_label: Label
+          manage_fund_source: Atur Sumber Dana
+        create:
+          notice: Permohonan penarikan berhasil diajukan. Gunakan informasi berikut untuk menlengkapi transfer bank.
+    tickets:
+      index:
+        new_ticket: Tiket Baru
+      new:
+        intro: Jika anda memiliki masalah, mulai percakapan baru sehingga staff kami dapat membantu anda segera. Seluruh percakapan antara anda dan bantuan staff adalah privat.
+      ticket_create_succ: Tiket berhasil dibuat.
+      ticket_create_fail: Gagal membuat tiket, silahkan coba lagi beberapa saat.
+      comment_succ: Komentar sukses.
+      cooment_fail: Komental gagal, silahkan coba lagi beberapa saat.
+      me: saya
+      supporter: Support
+      close: Tutup Tiket
+      close_succ: Tiket berhasil ditutup
+      close_confirm: Apakah anda yakin menutup tiket ini?
+      title_content_both_blank: Judul dan isi tidak boleh kosong.
+      from: dari
+      view_closed_tickets: Lihat tiket tertutup
+      view_open_tickets: Lihat tiket terbuka
+    account_versions:
+      index:
+        description: Setiap transaksi dan masukan dalam Peatio didokumentasikan dengan baik dan menyeluruh.
+    api_tokens:
+      user_tokens:
+        no_token: Anda tidak memiliki token API.
+        edit: Ubah
+        destroy: Hapus
+        destroy-confirm: Anda yakin?
+        create: Buat Token Baru
+        http: Dokumen API HTTP
+        websocket: Dokumen API Websocket
+        more: 'Untuk informasi lebih lanjut mohon periksa bagian API pada github:'
+      oauth_tokens:
+        panel_title: Otorisasi
+        title: Aplikasi Terotorisasi
+        oauth: Integrasi OAuth
+        intro: Atur seluruh aplikasi terotoriasi.
+        no_token: Tidak ada aplikasi.
+        unbind: Putus
+        unbind-confirm: Anda yakin?
+        oauth_app_name: Nama
+        oauth_app_expire: Berakhir Pada
+        oauth_app_scope: Cakupan
+      unbind:
+        success: Berhasil terputus.
+        failed: Pemutusan gagal.
+      new:
+        label_hint: Label membantu anda mengingat pemakaian token, opsional.
+      create:
+        alert_two_factor: Two step authentication gagal.
+        success: Token API berhasil dibuat.
+        failed: Gagal membuat token API. Silahkan coba lagi nanti atau kontak admin.
+        desc: Mohon salin dan tempel key berikut pada tempat yang aman dan simpan. Secret key tidak akan pernah ditampilkan lagi.
+      edit:
+        access_key_hint: Dibuat pada %{created_at}
+        label_hint: Label membantu anda mengingat pemakaian token, opsional.
+        ip_whitelist_hint: Pisahkan IP dengan koma, mengkosongkan field ini berarti memperbolehkan semua IP.
+      update:
+        alert_two_factor: Two step authentication gagal.
+        success: Berhasil disimpan.
+        failed: Gagal menyimpan token. Silahkan coba lagi nanti atau kontak admin.
+      destroy:
+        success: Token berhasil dihancurkan.
+        failed: Gagal menghancurkan token.
+    assets:
+      index:
+        liability-proof: Proof of Liabilities
+        btc-assets: BTC Assets
+        cny-assets: CNY Assets
+        eth-assets: ETH Assets
+      liability_tabs:
+        verify-btc: Verify My BTC Assets
+        verify-cny: Verify My CNY Assets
+        verify-eth: Verify My ETH Assets
+        btc-assets-total: 'Total BTC assets of exchange: '
+        cny-assets-total: 'Total CNY assets of exchange: '
+        eth-assets-total: 'Total ETH assets of exchange: '
+      liability_proof:
+        title: Proof of Liabilities
+        intro: As an exchange, our liabilities refer to the sum of money (in both
+          crypto currencies and fiat currencies) that our users trust us with. On
+          this page, we present you our liabilities. We also provide you a way to
+          verify that your account balance is indeed part of our liabilities.
+        how-to-verify: How to verify an exchange is solvent?
+        how-to-verify-uri: https://peatio.com/documents/liability_proof
+      liability_data:
+        liability-proof-generating: Proof of Liability generation in process, please
+          come back after 30 minutes.
+        root-json: Root node
+        partial-tree: 'My %{currency} Assets: '
+        get-partial-tree: Get my partial tree data
+        timestamp: The proof data is generated at %{time}.
+        go-verify: Verify
+      btc_assets:
+        title: BTC Assets
+        intro: All of exchange's BTC assets are listed here.
+        total: Total BTC Assets
+        address: Address
+      eth_assets:
+        title: ETH Assets
+        intro: All of exchange's ETH assets are listed here.
+        total: Total ETH Assets
+        address: Address
+      cny_assets:
+        title: CNY Assets
+        intro: All of exchange's CNY assets are listed here.
+        total: Total CNY Assets
+        description: " <p>For supervision, you can inquiry the balance of our deposit
+          account:</p> <p>Bank: %{bank}</p> <p>Account： %{address}</p> <p>Inquiry
+          Password： %{password}</p> <p>Inquiry Tel.： %{tel}</p>"
+      partial_tree:
+        success: 'Success! Verification data generated at: %{timestamp}'
+    funds:
+      show:
+        account_history: Riwayat Akun
+        cny_format: '0.00'
+        btc_format: '0.00000000'
+        eth_format: '0.00000000'
+        reason:
+          cny:
+            strike_add: Tambah
+            strike_sub: Kurang
+            deposit: Setor
+            withdraw: Tarik
+            fix: Fix
+          btc:
+            strike_add: Tambah
+            strike_sub: Kurang
+            deposit: Setor
+            withdraw: Tarik
+            fix: Fix
+          eth:
+            strike_add: Tambah
+            strike_sub: Kurang
+            deposit: Setor
+            withdraw: Tarik
+            fix: Fix
+        ref:
+          system: System
+          default: Default
+    id_documents:
+      edit:
+        state: State
+        state_unverified: BELUM DIVERIFIKASI
+        state_verifying: MEMVERIFIKASI
+        state_verified: TERVERIFIKASI
+        name: Nama
+        birth_date: Tanggal Lahir
+        address: Alamat
+        city: Kota
+        country: Negara
+        zipcode: Kode Pos
+        id_document_type: Tipe Dokumen
+        id_document_number: Nomor Dokumen
+        id_document_file: Foto Dokumen
+        id_bill_type: Bukti Kependudukan
+        id_bill_file: Foto Bukti Kependudukan
+      update:
+        notice: Verfikasi akun anda telah diajukan.
+    markets:
+      show:
+        error: Gagal
+        success: Sukses
+        analysis_panel: Analisis
+        help_panel: Bantuan
+        done: SELESAI
+        cancel: BATAL
+        cancel_confirm: Anda yakin membatalkan order ini?
+        confirm: KONFIRMASI
+        ask_order: 'JUAL ##sn#'
+        bid_order: 'BELI ##sn#'
+        my_active_order: Aktif
+        my_done_order: Selesai
+        trades: Trading
+        chat: Chat Channel
+      market_list:
+        all: Pasar
+        all_html: "<i class='fa fa-check'></i><span>Semua Pasar</span>"
+        cny_html: "<i class='fa fa-check'></i><span>Pasar CNY</span>"
+        btc_html: "<i class='fa fa-check'></i><span>Pasar BTC</span>"
+        price: Harga
+        change: "24h %"
+      range_switch:
+        switch_1: 1m
+        switch_5: 5m
+        switch_15: 15m
+        switch_30: 30m
+        switch_60: 1h
+        switch_120: 2h
+        switch_240: 4h
+        switch_360: 6h
+        switch_720: 12h
+        switch_1440: 1d
+        switch_4320: 3d
+        switch_10080: 1w
+      depths:
+        price: Harga
+        amount: Jumlah
+        buy: Beli
+        sell: Jual
+        ask_orders: Jual
+        bid_orders: Beli
+      ticker:
+        last: Harga Terikini
+        ask: Jual
+        bid: Beli
+      account_balance:
+        title: Saldo Akun
+        available: Tersedia %{currency}
+      bid_entry:
+        action: "Beli %{currency}"
+        price: Harga
+        last_price: Harga Terkini
+        amount: Jumlah
+        total: Total
+      ask_entry:
+        action: "Jual %{currency}"
+        price: Harga
+        last_price: Harga Terkini
+        amount: Jumlah
+        total: Total
+      place_order:
+        price_high: HIGH
+        price_low: LOW
+        full_bid: FULL
+        full_ask: EMPTY
+      order_book:
+        title: Buku Order
+        volume: Volume
+        price: Harga
+        amount: Jumlah
+        ask: Jual
+        bid: Beli
+        fade_toggle_depth: Kedalaman Pasar
+      trade_state:
+        new: Baru
+        partial: Parsial
+      market_trades:
+        all: Semua
+        my: Saya
+        all_html: "<i class='fa fa-check'></i><span>Semua</span>"
+        my_html: "<i class='fa fa-check'></i><span>Saya</span>"
+        time: Waktu
+        price: Harga
+        volume: Volume
+      header:
+        network: Kondisi Koneksi
+        vol: 24h Volume
+        high: High
+        low: Low
+        change: Change
+      settings:
+        sound: Suara
+        notification: Notify
+        funds: "Dana"
+        signout: "Keluar"
+        settings: "Profil"
+        history: "Riwayat"
+      account_summary:
+        title: Ringkasan
+        account: Akun
+        amount: Jumlah
+        locked: Beku
+        view_all_accounts: "Lihat Semua"
+        hide_all_accounts: "Sembunyikan Yang Lain"
+      my_orders:
+        orders_wait: Order Pending
+        orders_done: Order Selesai
+        orders_cancel: Order Batal
+        no_open_orders: Anda tidak memiliki order pending.
+        clear_all_html: "<i class='fa fa-trash'></i><span>Batalkan Semua</span>"
+        clear_bids_html: "<i class='fa fa-trash'></i><span>Batalkan Semua Pembelian</span>"
+        clear_asks_html: "<i class='fa fa-trash'></i><span>Batalkan Semua Penjualan</span>"
+        confirm_clear_all: Anda yakin membatalkan semua order?
+        confirm_clear_bids: Anda yakin membatalkan semua order pembelian?
+        confirm_clear_asks: Anda yakin membatalkan semua order penjualan?
+        price: Harga
+        volume: Volume
+        amount: Jumlah
+        time: Waktu Peletakan
+      mask:
+        warning: Mohon <a class=text-up href='/signup'>Daftar</a> atau <a class=text-up
+          href='/signin'>Masuk</a> untuk menggunakan
+      klime_chart:
+        title: Candlestick Charts
+      global:
+        global_orders_title: ORDER
+        global_trades_title: TRADE
+      chat:
+        title: Chat Channel
+    settings:
+      success: Pembaharuan pengaturan berhasil
+      failure: Passcode salah. Coba lagi.
+      index:
+        safety_instruction: Agar bitcoin dan informasi personal anda terlindungi, kami sangat menyarakankan anda untuk menggunakan Two-Factor Authentication.
+        reset_password: Reset Password Anda
+        reauthenticate: Otentikasi
+        activated: Email telah dikirim ke kotak surat anda, silahkan periksa segera untuk verfikasi. Jika anda tidak menerimanya, silahkan klik tombol "Kirim Lagi"
+        auth-activated: Silahkan konfirmasi alamat email anda terlebih dahulu.
+        auth-verified: Silahkan verifikasi akun anda terlebih dahulu.
+        email:
+          title: Verifikasi Email
+          description: Email anda belum terverifikasi, klik "Kirim Surat" untuk menyelesaikan verifikasi
+          description-activated: Email anda berhasil diverifikasi, ingat dan lindungi alamat e-mail ini, ini merupakan sertifikat bagi akun anda
+          resend: Kirim Lagi
+          activated: Terverifikasi
+          go: Set
+        phone_number:
+          title: Nomor Telepon
+          description: Menyediakan nomor telepon anda membuat akun anda lebih aman. Anda dapat dengan cepat mereset password dan operasi akun anda akan dinotifikasi.
+          go: Set
+          verified: Terverifikasi
+          hint: "Nomor terverifikasi %{hint}"
+        two_factor_auth:
+          title: Two-Factor Authentication
+          description: Two-Factor Authentication menyediakan tambahan keamanan bagi akun anda.
+          enable: Aktifkan
+          disable: Nonaktifkan
+        verification:
+          title: Verifikasi Akun
+          description: Membantu anda untuk menghindari orang yang ingin mencoba menggunakan akun anda dengan menggunakan kata sandi dan telepon genggam anda
+          go: Ajukan
+          verified: Terverifikasi
+        asset_passwords:
+          title: Kata Sandi Aset
+          description: Kata sandi aset akan diperlukan ketika anda ingin menarik uang anda. Disarankan untuk tidak menggunakan kata sandi yang sama dengan akun anda.
+          go: Set
+        passwords:
+          title: Kata Sandi
+          description: This password is required for login, please remember it.
+          go: Ubah Kata Sandi
+          set: Set
+        api_tokens:
+          title: Token API
+          description: Buat dan atur token API anda.
+          go: Set
+        weibo:
+          title: Connect to Weibo
+          description: After you connecting to Weibo, you can login via Weibo account.
+          bound_desc: This has been connected with %{nickname}.
+          bind: Connect
+          unbind: Disconnect
+    otps:
+      new:
+        step_1: Langkah 1
+        step_2: Langkah 2
+        step_3: Langkah 3
+        or: ATAU
+        download_app: Instal aplikasi Google Authenticator pada smartphone anda dan buka.
+        scan_qr_code: Pindai kode QR dibawah
+        enter_passphrase: Secara manual masukkan kunci berikut pada aplikasi
+        enter_passcode: Masukkan dan ajukan passcode yang digenerasi oleh aplikasi Google Authenticator.
+    shared:
+      balances:
+        locked: Beku
+        balance: Saldo
+        available: Tersedia
+        title: "Akun %{icon} %{c}"
+        cny_format: '0.00'
+        btc_format: '0.00000000'
+        eth_format: '0.00000000'
+        total: Total
+  guides:
+    private:
+      settings:
+        panel: Settings
+        index:
+          intro: Admin and revise your profile.
+      api_tokens:
+        panel: API Tokens
+        index:
+          title: My Tokens
+          intro: A list of all your API tokens. An empty 'IP Whitelist' means any
+            ip is allowed to use the token.
+        new:
+          title: Create API Token
+        create:
+          title: Create API Token
+        edit:
+          title: Edit API Token
+        update:
+          title: Edit API Token
+      tickets:
+        panel: Tickets
+      id_documents:
+        panel: Real-name Authentication
+        new:
+          title: Submit real-name authentication information
+          intro: In line with the national laws , identity verification is required.
+            please verify your account to proceed.
+    panels:
+      balance: Account
+    verify:
+      google_auths:
+        panel: Two-Factor Authentication
+        edit:
+          title: Disable Two-Factor Authentication
+          intro: If you have a new phone, you can disable Two-Factor Authentication in the old phone, and enable Two-Factor Authentication  with the new one.
+      sms_auths:
+        panel: Verify Phone Number
+    reset_passwords:
+      panel: Password
+      new:
+        title: Reset Password
+        intro: Please enter your e-mail address which is verified by your  account,
+          enter verification code to submit,and login your mailbox, follow the prompts
+          to reset your password.
+      create:
+        title: Reset password
+        intro: Please enter your e-mail address which is verified by your  account,
+          enter verification code to submit,and login your mailbox, follow the prompts
+          to reset your password.
+      edit:
+        title: Set Password
+      update:
+        title: Set Password
+    sessions:
+      panel: Login
+      new:
+        title: Login my account
+        intro: Login Peatio now for you to exchange.
+      failure:
+        title: Login my account
+        intro: Login Peatio now for you to exchange.
+    identities:
+      panel: Create Account
+      new:
+        title: Create My Account
+        intro: This will be your only ID on Peatio which is necessary for your exchange
+          , deposit and withdrawal . please fill it out carefully.
+      edit:
+        panel: My Account
+        title: Reset Password
+    two_factors:
+      panel: Two Factor Authenticator
+  simple_form:
+    placeholders:
+      deposit:
+        bank:
+          amount: Jumlah minimum 20000
+      session:
+        email: Alamat E-mail
+        password: Kata Sandi
+      identity:
+        email: Contoh：saputra@contoh.co.id
+        password: Masukkan kata sandi anda
+        password_confirmation: Konfirmasi kata sandi anda
+        edit:
+          password: Silahkan masukkan kata sandi anda
+      document:
+        key: Kunci URL tautan dokumen
+        title: Judul Dokumen
+      order_bid:
+        origin_volume: Volume Beli
+        sum: Sum
+      order_ask:
+        origin_volume: Volume Jual
+        sum: Total Pergantian
+      reset_password:
+        email: Contoh：saputra@contoh.co.id
+        password: Silahkan masukkan kata sandi anda!
+      withdraw:
+        bank:
+          sum: Jumlah minimum 20000
+        satoshi:
+          sum: Jumlah minimum 0.001
+          fund_extra: Masukkan label untuk alamat ini (opsional)
+    hints:
+      deposit:
+        bank:
+          sum: "<a target='_balance' href='#'>Struktur biaya</a>"
+          member_name: "<span class='text-danger'>Nama rekening bank penyetor harus sama dengan nama anda yang terotentikasi</span>"
+          sn: "<span class='text-danger'>Mohon salin SN pada berita trasfer bank anda agar dapat diproses dengan cepat.</span>"
+      two_factor:
+        otp_secret: Kamu sarankan anda menyimpan gambar code QR atau chipertext untuk menghindari kesulitan jika telepon genggam anda hilang.
+        otp: Validator akan membuat kata sandi baru setiap tiga puluh detik, mohon masukkan tepat waktu.
+      identity:
+        password: Silahkan masukkan kata sandi sedikitnya 6 karakter dan disarankan mengandung huruf besar dan huruf kecil dan angka.
+      reset_password:
+        password: Silahkan masukkan kata sandi sedikitnya 6 karakter dan disarankan mengandung huruf besar dan huruf kecil dan angka.
+      id_document:
+        name: Silahkan masukkan nama yang sama dengan identitas anda.
+      withdraw:
+        bank:
+          member_name: "<span class='text-danger'>Nama rekening bank penarik harus sama dengan nama anda yang terotentikasi</span>"
+          sum: "<a target='_balance' href='#'>Struktur biaya</a>"
+          fund_extra: Jika bank anda tidak terdapat pada daftar, mohon kontak layanan kostumer.
+        satoshi:
+          sum: "<a target='_balance' href='#'>Struktur biaya</a>"
+    creating: Membuat...
+    updating: Membaharui...
+    buttons:
+      or: Atau
+      cancel: Batal
+    'yes': 'Ya'
+    'no': 'Tidak'
+    required:
+      text: wajib
+      mark: "*"
+    error_notification:
+      default_message: 'Mohon periksa masalah berikut:'
+    labels:
+      defaults:
+        title: Judul
+      google_auth:
+        uri: QR code
+        otp_secret: Ciphertext
+        otp: Password on the authenticator
+      fund_source:
+        label: Label
+        address: Alamat
+        category: Kategori
+      session:
+        email: Email Masuk
+        password: Password Masuk
+        captcha: Captcha
+      identity:
+        email: Email Masuk
+        old_password: Password Lama
+        password: Password Baru
+        password_confirmation: Konfirmasi Password Baru
+      reset_password:
+        password: Password Baru
+      ticket:
+        content: Detil
+      withdraw:
+        bank:
+          fund_extra: Bank
+          sum: Jumlah
+          account_balance: Saldo Rekening
+          member_name: Nama Pemilik Rekening
+        satoshi:
+          fee: Biaya
+          sum: Jumlah
+          fund_uid: Alamat Bitcoin
+          fund_extra: Label
+          account_balance: Saldo Akun
+          member_name: Nama Akun
+  admin:
+    deposits:
+      banks:
+        index:
+          oneday: Requests in the last 48 hours
+          available: All Pending Requests
+        show:
+          alert: Recharge cannot be located.
+          notice: The recharge have been successful.
+          deposit: Deposit Request
+          accept: Accept
+          target_deposit: Wire Transfer
+          confirm: Confirm recharge?
+        update:
+          blank_txid: TxID can't be blank
+      satoshis:
+        update:
+          notice: The deposit was successful.
+        index:
+          accept: Accept
+          accept_confirm: Confirm deposit?
+    tickets:
+      view: View
+      close: Close Ticket
+      comments_count: Comments Count
+      replies: Replies
+      open_tickets: Open Tickets
+      closed_tickets: Closed Tickets
+    members:
+      index:
+        search: Search
+        members: Members
+        email: Email
+        name: Name
+        phone: Phone Number
+        wallet_address: Wallet Address
+      show:
+        member_title: User Information
+        actions_title: Action
+        accounts_title: Account Information
+        account_versions_title: Records
+    dashboard:
+      index:
+        accounts_title: Account Summary
+        daemons_title: System Summary
+    documents:
+      index:
+        new: New Document
+    statistic:
+      filter: Filter
+      summary: Summary
+      click-to-expand: Expand
+      members:
+        show:
+          table: Results
+      orders:
+        show:
+          avg: Average
+          sum: Order Volume
+          sum_strike: By Volume
+          count: Count
+      trades:
+        show:
+          count: Transactions
+          volume: Volume
+          amount: Total Amount
+          min_price: Minimum Price
+          max_price: Maximum Price
+          avg_price: Average Price
+          amount_fee: Transaction Fee
+          volume_fee: Total Fee
+      deposits:
+        show:
+          count: Total
+          amount: Total Amount
+      withdraws:
+        show:
+          count: Total
+          amount: Total Amount
+          fee: Fee
+    withdraws:
+      banks:
+        index:
+          one: Pending withdrawal Orders
+          all: Twenty-four hours Orders
+          empty: No Data
+        show:
+          process: Process
+          succeed: Succeed
+          reject: Reject
+          succeed_confirm: Confirm Process?
+          reject_confirm: Confirm Reject?
+          withdraw: Withdraw
+          empty: No Data
+      satoshis:
+        index:
+          one: Pending withdrawals
+          all: Last 48 hours
+          empty: No data
+        show:
+          process: Accepted
+          succeed: Withdraw
+          reject: Reject
+          succeed_confirm: Process withdrawal?
+          reject_confirm: Reject withdrawal?
+          withdraw: Withdrawals
+  deposits/satoshi:
+    aasm_state:
+      submitted: Diajukan
+      accepted: Disetujui
+      checked: Diperiksa
+      warning: Diperingatkan
+  doorkeeper:
+    scopes:
+      profile: Read your basic profile (e.g. name, email) and account balances
+      history: Read your trade history
+      trade: Submit and cancel orders
+    authorizations:
+      new:
+        title: Peatio Application Authorization
+        authorize_html: Authorize <strong class='text-info'>%{name}</strong> to use
+          your account?
+        scopes: 'This application will be able to:'
+        authorize: Authorize
+        deny: Deny
+    errors:
+      messages:
+        invalid_request: The request is missing a required parameter, includes an
+          unsupported parameter value, or is otherwise malformed.
+        invalid_redirect_uri: The redirect uri included is not valid.
+        unauthorized_client: The client is not authorized to perform this request
+          using this method.
+        access_denied: The resource owner or authorization server denied the request.
+        invalid_scope: The requested scope is invalid, unknown, or malformed.
+        server_error: The authorization server encountered an unexpected condition
+          which prevented it from fulfilling the request.
+        temporarily_unavailable: The authorization server is currently unable to handle
+          the request due to a temporary overloading or maintenance of the server.
+        credential_flow_not_configured: Resource Owner Password Credentials flow failed
+          due to Doorkeeper.configure.resource_owner_from_credentials being unconfigured.
+        resource_owner_authenticator_not_configured: Resource Owner find failed due
+          to Doorkeeper.configure.resource_owner_authenticator being unconfiged.
+        unsupported_response_type: The authorization server does not support this
+          response type.
+        invalid_client: Client authentication failed due to unknown client, no client
+          authentication included, or unsupported authentication method.
+        invalid_grant: The provided authorization grant is invalid, expired, revoked,
+          does not match the redirection URI used in the authorization request, or
+          was issued to another client.
+        unsupported_grant_type: The authorization grant type is not supported by the
+          authorization server.
+        invalid_resource_owner: The provided resource owner credentials are not valid,
+          or resource owner cannot be found
+        invalid_token:
+          revoked: The access token was revoked
+          expired: The access token expired
+          unknown: The access token is invalid
+    flash:
+      applications:
+        create:
+          notice: Application created.
+        destroy:
+          notice: Application deleted.
+        update:
+          notice: Application updated.
+      authorized_applications:
+        destroy:
+          notice: Application revoked.
+  easy_table:
+    satoshi:
+      amount: Amount
+      txid: TxId
+      created_at: Created At
+      confirmations: Confirmations
+      member_name: Member
+      state_and_actions: State/Actions
+      currency_obj_key_text: Currency
+    bank:
+      sn: SN
+      amount: Amount
+      created_at: At
+      fund_source: Fund Source
+      memo: Memo
+      member_name: Member
+      state_and_actions: State/Action
+      currency_obj_key_text: Currency
+  enumerize:
+    account_version:
+      reason:
+        fix: FIX
+        unknown: UNKNOWN
+        strike_add: TRADE PLUS
+        strike_sub: TRADE SUB
+        strike_fee: TRADE FEE
+        strike_unlock: TRADE UNLOCK
+        order_cancel: ORDER CANCEL
+        order_submit: ORDER SUBMIT
+        deposit: DEPOSIT
+        withdraw: WITHDRAW
+        withdraw_lock: WITHDRAW LOCK
+        withdraw_unlock: WITHDRAW UNLOCK
+    state:
+      done: Done
+      wait: Wait
+      cancel: Cancel
+    currency:
+      cny: CNY
+      btc: BTC
+      eth: ETH
+    order:
+      state:
+        done: DONE
+        wait: WAIT
+        cancel: CANCEL
+    deposit:
+      aasm_state:
+        submitted: Submitted
+        submitting: Submitting
+        accepted: Accepted
+        cancelled: Canceled
+        rejected: Rejected
+        checked: Checked
+        warning: Warning
+    withdraw:
+      state:
+        submitting: Submitting
+        submitted: Submitted
+        rejected: Rejected
+        accepted: Accepted
+        suspect: Suspect
+        processing: Processing
+        done: Done
+        canceled: Canceled
+    fund_source:
+      category:
+        satoshi: Bitcoin
+        bank: Bank
+    id_document:
+      id_document_type:
+        id_card: ID Card
+        passport: Passport
+        driver_license: Driver's License
+      id_bill_type:
+        bank_statement: Bank Statement
+        tax_bill: Tax Bill
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: Last &raquo;
+      previous: "&lsaquo; Prev"
+      next: Next &rsaquo;
+      truncate: "..."
+
+  mailer:
+    dear_user: Dear pengguna,
+    signature: Terima kasih,<br/>The Peatio Team
+    please_contact: Jika bukan anda yang meminta ini, tolong <a href='mailto:%{contact_mail}'>hubungi kami</a> ASAP.
+    footer: Ini adalah email yang dibentuk secara otomatis, mohon jangan membalas, jika anda memiliki pertanyaan, mohon <a href="mailto:%{contact_mail}">hubungi kami</a>.
+  comment_mailer:
+    admin_notification:
+      subject: "[PEATIO] Pengguna membalas tiket"
+      notification_content: Pengguna %{email} membalas tiket, mohon ikuti tautan dibawah untuk melihat detil
+    user_notification:
+      subject: "[PEATIO] Tiket anda mendapat balasan baru"
+      notification_content: 'Tiket anda mendapat balasan baru, mohon ikuti tautan dibawah untuk melihat detil:'
+  deposit_mailer:
+    accepted:
+      subject: "[Peatio] Penyetoran anda telah ditambahkan ke dalam akun anda"
+      content: Deposit %{currency} anda telah ditambahkan ke dalam akun anda.
+  member_mailer:
+    notify_signin:
+      subject: "[PEATIO] Anda baru saja masuk"
+      just_signed_in: Anda baru saja masuk.
+    google_auth_activated:
+      subject: "[PEATIO] Google authenticator teraktivasi"
+      google_auth_activated: Anda telah mengaktivasi google authenticator dengan sukses
+    google_auth_deactivated:
+      subject: "[PEATIO] Google authenticator ternonaktifkan"
+      google_auth_deactivated: Anda telah mengnonaktifkan google authenticator dengan sukses
+    sms_auth_activated:
+      subject: "[PEATIO] SMS authenticator teraktivasi"
+      sms_auth_activated: Anda telah mengaktivasi SMS authenticator dengan sukses
+    sms_auth_deactivated:
+      subject: "[PEATIO] SMS authenticator ternonaktifkan"
+      sms_auth_deactivated: Anda telah mengnonaktifkan SMS authenticator dengan sukses
+    reset_password_done:
+      subject: "[PEATIO] Kata sandi anda dirubah"
+      successful: Kata sandi anda telah dirubah dengan sukses.
+    phone_number_verified:
+      subject: "[PEATIO] Nomor telepon anda terverifikasi"
+      verified: 'Nomor telepon anda terverifikasi: %{phone_number}'
+  system_mailer:
+    daily_stats:
+      member_stats: Member Stats
+      signup: Signup
+      activation: Activation
+      asset_stats: Assets Changes
+      trade_stats: Trades Changes
+      asset_value_change_total: Digital Assets Changes Total
+      trades_change_total: Trades Changes Total
+  ticket_mailer:
+    admin_notification:
+      subject: "[PEATIO] Pengguna membuat tiket baru"
+      admin_notification_content:  Pengguna %{email} membuat tiket baru, mohon ikuti tautan dibawah untuk melihat detil
+    author_notification:
+      subject: "[PEATIO] Terima kasih telah mengajukan tiket"
+      thanks_for_submit_ticket: Terima kasih telah mengajukan tiket kepada kami, kami akan menghubungi anda segera.
+  token_mailer:
+    activation:
+      subject: "[Peatio] Aktivasi Akun"
+      click_to_verify: 'Terima kasih telah mendaftar di Peatio, mohon ikuti tautan dibawah untuk memverifikasi email anda:'
+      unable_to_click: Salin dan buka tautan pada browser jika tidak dapat di klik dan kunjungi.
+      link_expire: Tautan berakhir dalam 30 menit.
+    reset_password:
+      subject: "[Peatio] Silahkan Reset Password Anda"
+      hi: Hi,
+      follow_the_link: 'Silahkan ikuti tautan dibawah untuk reset password dalam 30 menit:'
+  withdraw_mailer:
+    submitted:
+      subject: "[Peatio] Pembaharuan status penarikan anda"
+      content: Permintaan penarikan %{currency} anda berhasil diajukan, kami akan memprosesnya segera. Mohon menunggu. Hubungi kami jika anda memiliki pertanyaan.
+    processing:
+      subject: "[Peatio] Pembaharuan status penarikan anda"
+      content: Permintaan penarikan %{currency} anda dalam proses. Mohon menunggu. Hubungi kami jika anda memiliki pertanyaan.
+    done:
+      subject: "[Peatio] Pembaharuan status penarikan anda"
+      content: Permintaan penarikan %{currency} selesai. Mohon diperiksa. Hubungi kami jika anda memiliki pertanyaan.
+    withdraw_state:
+      subject: "[Peatio] Pembaharuan status penarikan anda"
+      your_state: 'Status penarik anda: '
+
+  'true': true
+  'false': false
+  view_on_github: View on Github
+  slogan: An crypto-currency exchange for Indonesia.
+  tags:
+    vip: VIP
+    hero: Hero Member
+    admin: Admin
+  trade:
+    markets: Pasar
+    realtime_price:
+      title: Harga Terkini
+    account_balance:
+      title: Saldo
+  gon:
+    ask: Jual
+    bid: Beli
+    brand: Peatio Exchange
+    notification:
+      title: Peatio Exchange
+      enabled: Notifikasi diaktifkan.
+      new_trade: "%{kind} order#%{id} dieksekusi pada %{price} %{quote_unit} untuk %{volume} %{base_unit}。"
+  back: Kembali
+  invalid_password: Password salah
+  all: Semua
+  date:
+    formats:
+      date-short: "%m-%d"
+      short: "%m-%d %H:%M"
+      default: "%m/%d/%Y %H:%M"
+  time:
+    formats:
+      date-short: "%m-%d"
+      short: "%m-%d %H:%M"
+      default: "%m/%d/%Y %H:%M"
+  sms:
+    verification_code: 'Kode verifikasi nomor telepon anda adalah: %{code}.'
+    password_changed: Hi %{email}, password anda telah berhasil diubah.
+    deposit_done: Hi %{email}, permintaan setor anda selesai.
+    withdraw_done: Hi %{email}, permintaan tarik anda selesai.
+  header:
+    home: Home
+    dashboard: Dashboard
+    admin: Admin Panel
+    market: Trade
+    settings: Profil
+    signin: Masuk
+    signout: Keluar
+    signup: Daftar
+    login_via_weibo: Login via Weibo
+    funds: Dana
+    getstart: Mulai Sekarang
+    assets: Solvency
+    history: Riwayat
+    order_history: Riwayat Order
+    trade_history: Riwayat Trade
+    account_history: Riwayat Akun
+    my_profile: Profil Saya
+    tickets: Tiket
+    account_balance: Total Asset
+    back: Kembali
+    total: Total
+    deposit: Setor
+    withdraw: Tarik
+  admin_header:
+    deposits: Deposits
+    withdraws: Withdraws
+    statistics: Data Statistics
+    id_documents: Verify Account
+  footer:
+    about: Tentang
+    privacy: Privasi
+    contact: Hubungi Kami
+    price: Harga
+    liability_proof: liability proof
+  actions:
+    go: Go
+    submit: Ajukan
+    deposit: Setor
+    select: Silahkan Pilih
+    unlock: Buka Kunci
+    confirm: Konfirmasi
+    back: Kembali
+    block: lihat dalam block
+    destroy: Hapus
+    destroy_confirm: Anda yakin ingin menghapus ini?
+    detail: Detil
+    publish: Terbitkan
+    edit: Ubah
+    preview: Preview
+    close: Tutup
+    cancel: Batal
+    view: Lihat
+    member: Member
+    transact: Transact
+    reject: Tolak
+    clipboard:
+      click: Klik untuk menyalin
+      done: Tersalin
+  chart:
+    open: Open
+    high: High
+    low: Low
+    close: Close
+    price: Harga
+    volume: Volume
+    candlestick: 'Candlestick'
+    line: 'Line'
+    minute: m
+    hour: Hour
+    day: Day
+    week: Week
+    month: Month
+    year: Year
+    zoom: Zoom
+    ask: Jual
+    bid: Beli
+    depth: Depth
+    depth_title: Market Depth
+  'yes': 'Yes'
+  'no': 'No'
+  simple_captcha:
+    label: Refresh halaman untuk mendapatkan captcha baru.
+    placeholder: ketik karakter dalam gambar
+  helpers:
+    action:
+      view: View
+      customer_service: contact us
+    submit:
+      order_ask:
+        create: ASK
+      order_bid:
+        create: BID
+      document:
+        create: Create Document
+        update: Update Document
+        destroy: Destroy Document
+      member:
+        update: Open Account
+      identity:
+        save: Sign in
+        create: Sign up
+        destroy: Sign out
+        verify: Verify
+        update: Change
+      two_factor:
+        create: Verify
+        update: Activiate
+      reset_two_factor:
+        create: Reset Two-Factor Authentication
+      reset_password:
+        update: Reset Sign in Password
+        create: Reset Sign in Password
+      fund_source:
+        create: Save
+      deposit:
+        create: Deposit
+      id_document:
+        create: Submit
+      withdraw:
+        create: Submit
+      ticket:
+        create: Submit
+  activations:
+    new:
+      notice: Email telah dikirimkan ke kotak surat anda, silahkan periksa untuk verifikasi segera. Jika anda tidak menerimanya, silahkan klik tombol "Kirim Lagi".
+      verified: Alamat email anda berhasil diverifikasi.
+      login_required: login diperlukan!
+      tip: Tautan aktifasi terikirim ke %{email}
+      spam: Silahkan periksa folder spam anda untuk menemukan tautan aktivasi.
+    edit:
+      notice: Akun berhasil diaktivasi! Silahkan masuk di bawah.
+      alert: Tautan aktivasi telah berakhir atau tidak valid.
+  authentications:
+    emails:
+      new:
+        title: Atur Email
+        setup_email: Silahkan atur alamat email anda.
+        warning: Silahkan periksa kotak masuk anda setelah menyimpan alamat email.
+        email_address: Alamat Email
+        save: Simpan
+    weibo:
+      destroy:
+        last_auth_alert: You couldn't delete the last authentication
+        unbind_success: Unbind from the Weibo
+    identities:
+      new:
+        title: Atur Kata Sandi
+        save: Simpan
+      create:
+        success: Pengaturan kata sandi berhasil
+  forum:
+    index:
+      notice:
+        display_name: Silahkan atur nama tampilan anda untuk forum.
+  identities:
+    new:
+      title: DAFTAR
+      signin: Masuk
+      password: Silahkan masukkan kata sandi sedikitnya 6 karakter dan disarankan mengandung huruf besar dan huruf kecil dan angka.
+    update:
+      auth-error: Kata sandi lama yang anda masukkan salah, mohon ulangi.
+      auth-same: Kata sandi baru yang anda masukkan sama dengan kata sandi yang lama, mohon ulangi.
+      notice: Kata sandi akun anda berhasil diperbaharui.
+  layouts:
+    admin:
+      menus:
+        sections:
+          members: Members
+          deposits: Deposits
+          sites_statistics: Analytics
+          operating: Operations
+        items:
+          operating:
+            proofs: Proof
+            deposits: Deposits
+            documents: Documents
+            withdraws: Withdraws
+            tickets: Tickets
+          deposits:
+            currency: Deposit
+    application:
+      close: Tutup
+    meta:
+      page_title: Peatio - The Opensource Cryptocurrency Exchange
+      page_description: Peatio - The Opensource Cryptocurrency Exchange
+      page_keywords: Peatio,Opensource,Exchange,Cryptocurrency
+  members:
+    edit:
+      name: Mohon lengkapi aplikasi.
+  reset_passwords:
+    create:
+      success: E-mail untuk mereset kata sandi anda telah dikirimkan ke kotak surat anda. Jika tidak menemukan, periksa "Spam" terlebih dahulu sebelumnya, atau kirim permintaan lagi.
+    edit:
+      password: Silahkan masukkan kata sandi sedikitnya 6 karakter dan disarankan mengandung huruf besar dan huruf kecil dan angka.
+      invalid: Request tidak valid
+      submit: Reset Login Password
+      alert: Tautan reset password tidak valid.
+    update:
+      success: Kata sandi masuk anda telah direset, silahkan simpan kata sandi baru anda.
+      invalid: Request tidak valid
+  sessions:
+    new:
+      reset_password: Lupa Password?
+    new_with_two_factor_auth:
+      title: Two Factor Verification
+      reset_two_factor: Kehilangan perangkat two factor verification
+    create_with_two_factor_auth:
+      session_expired: Session berakhir. Coba lagi.
+    create:
+      error: Akun anda telah dinonaktifkan, kontak admin jika anda memiliki masalah.
+    failure:
+      account_locked: Terlalu banyak cobaan masuk gagal. Untuk memastikan keamanan dari akun anda, kami mengunci akun anda. Untuk membuka kunci akun, reset kata sandi dengan mengklik pada "Lupa Password".
+      error: ID pengguna atau password salah, silahkan coba lagi.
+  shared:
+    admin:
+      member:
+        member_info: Member Info
+        deactive_sms_two_factor: SMS TFA
+        deactive_app_two_factor: Google TFA
+        inactive: Inactive
+        deactive: Deactive
+        are_you_sure: Are you sure deactive two factor authentication?
+      account:
+        account_info: Account Info
+        payment_address: Deposit Address
+    alert:
+      modern: Agar pengalaman trading anda tidak terganggu, silahkan pakai browser yang lebih populer, kami merekomendasikan anda <a target='_blank' href='https://www.google.com/#q=google+chrome'>Google Chrome</a>。
+      pusher_unavailable: Koneksi jaringan terputus... <a href='#' class='alert-link'>Please refresh</a>.
+    header:
+      balance: Saldo
+    header_account_balance:
+      locked: Beku
+    market:
+      ticker:
+        ask_price: Ask
+        bid_price: Bid
+        high_price: High
+        low_price: Low
+        volume: Volume
+        latest_price: Last
+    frame:
+      deposit_now: Setor Sekarang
+  two_factors:
+    index:
+      verify: Verifikasi
+    update:
+      alert: Kode verifikasi two factor error, silahkan masukkan kembali.
+    auth:
+      please_active_two_factor: Silahkan set nomor telepon atau google authenticator terlebih dahulu.
+      submit: Ajukan
+      otp_placeholder: Kata sandi 6-digit
+      google_app: Google Authenticator
+      sms: Pesan Verifikasi SMS
+      send_code: Kirim Kode
+      send_code_alt: Kirim ulang dalam COUNT detik
+      hints:
+        app: Google Authenticator akan membuat kata sandi baru setiap 30 detik, silahkan masukkan tepat waktu.
+        sms: Kami akan mengirimkan pesan teks ke telepon anda berisi kode verifikasi.
+  verify:
+    google_auths:
+      edit:
+        submit: Nonaktifkan
+        warning: 'Tip: Jika anda kehilangan Two-Factor Authentication anda dan tidak dapat masuk ke akun Peatio, mohon hubungi layanan pengguna kami.'
+      show:
+        step-1: Langkah 1
+        step-2: Langkah 2
+        step-3: Langkah 3
+        or: ATAU
+        download-app: Install Google Authenticator app pada smart phone dan buka.
+        guide-link: "<a href='https://support.google.com/accounts/answer/1066447'
+          target='_blank'>Instruksi Instalasi</a>。"
+        scan-qr-code: Pindai kode QR dibawah menggunakan Google Authenticator APP，atau ketik cipher text ke dalam validator secara manual.
+        enter-passcode: Masukkan kata sandi dinamis yang ditampilkan pada smartphone anda untuk mengaktivasi Two-Factor Authentication.
+        submit: Aktifkan
+        ios: iOS
+        android: Android
+        blackbery: Blackberry
+        notice:
+          already_activated: The Google Authenticator sudah terpasang.
+          not_activated_yet: The Google Authenticator belum terpasang.
+      update:
+        alert: Kata sandi untuk otentikasi salah, silahkan masukkan kembali.
+        notice: Two-Factor Authentication telah berhasil diaktifkan.
+        sms_two_factor_error: Kode verifikasi SMS salah, silahkan masukkan kembali.
+      destroy:
+        alert: Kata sandi untuk otentikasi salah, silahkan masukkan kembali.
+        notice: Two-Factor Authentication telah berhasil dinonaktifkan.
+    sms_auths:
+      show:
+        title: Verifikasi Nomor Telepon
+        description: Menyediakan nomor telepon anda membuat akun anda lebih aman. Anda dapat dengan cepat mereset password dan operasi akun anda akan dinotifikasi.
+        warning: tidak dapat mendapatkan password akun anda jika nomor telepon tidak di set.
+        phone_number: Nomor telepon
+        send_code: Kirim Kode
+        send_code_alt: Kirim ulang dalam COUNT detik
+        input_otp: Masukkan kode 6-digit yang kami kirimkan kepada anda
+        submit: Simpan
+        notice:
+          send_code_success: Pengiriman kode verifikasi berhasil
+          otp_success: Verifikasi kode sukses.
+          already_activated: Nomor telepon anda telah teraktivasi.
+        alert:
+          phone_number_error: nomor telepon error
+  withdraw_channel:
+    bank:
+      key: Transfer Bank
+      title: Transfer Bank
+      intro: Tarik transfer bank, disarankan untuk jumlah besar
+      latency: 30 menit
+      transfer: Manual
+      go: Tarik
+    satoshi:
+      key: Blockchain
+      title: Bitcoin Blockchain
+      intro: Tarik bitcoin ke dompet anda
+      latency: 30 menit
+      transfer: Manual
+      go: Tarik
+    ether:
+      key: Ether
+      title: Ether Blockchain
+      intro: Tarik Ethereum ke dompet Ether anda
+      latency: 30 menit
+      transfer: Manual
+      go: Tarik
+  withdraws:
+    invalid_address: tidak valid. Anda tidak bisa tarik ke alamat ini.
+  withdraws/bank:
+    aasm_state:
+      submitting: Mengajukan
+      submitted: Diajukan
+      rejected: Ditolak
+      accepted: Disetujui
+      suspect: Dicurigai
+      processing: Diproses
+      done: Selesai
+      almost_done: Hampir Selesai
+      canceled: Dibatalkan
+      failed: Gagal
+  withdraws/satoshi:
+    aasm_state:
+      submitting: Mengajukan
+      submitted: Diajukan
+      rejected: Ditolak
+      accepted: Disetujui
+      suspect: Dicurigai
+      processing: Diproses
+      done: Selesai
+      almost_done: Hampir Selesai
+      canceled: Dibatalkan
+      failed: Gagal

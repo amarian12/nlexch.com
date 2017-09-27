@@ -1,0 +1,172 @@
+id-ID:
+  js:
+    brand: Peatio
+    submit: Ajukan
+    cancel: Batal
+    confirm: Konfirmasi
+    banks:
+      icbc: Industryand Commercial Bank of China
+      cbc: Construction Bank of China
+      bc: Bank of China
+      bcm: Bank of Communications
+      abc: Agriculture Bank of China
+      cmb: China Merchants Bank Ltd
+      cmbc: China Minsheng Banking Co., Ltd
+      cncb: China CITIC Bank
+      hxb: Hua Xia Bank Co., Ltd.
+      cib: Industrial Bank Co., Ltd
+      spdb: Shanghai Pudong Development Bank
+      bob: Bank of Beijing
+      ceb: China Everbright Bank CO.LTD
+      sdb: Shenzhen Development Bank
+      pab: Ping An Bank Co., Ltd.
+      gdb: Guangdong Development Bank
+      psbc: Postal Savings Bank of China
+      bos: Bank of Shanghai
+    fund_sources:
+      manage_bank_account: Manajemen Rekening Bank
+      manage_bank_account_desc: Untuk memfasilitasi pemilihan rekening bank untuk penyetoran dan penarikan 
+      manage_coin_address: Manajemen Alamat Mata Uang Digital
+      manage_coin_address_desc: Untuk memfasilitasi pemilihan alamat mata uang digital untuk penyetoran dan penarikan
+      bank: Bank
+      account: Rekening Bank
+      label: Label
+      address: Alamat
+      action: Aksi
+      add: Tambah
+      remove: Hapus
+      default: Default
+    funds:
+      deposit: Setor
+      withdraw: Tarik
+      currency_name:
+        cny: CNY
+        btc: BTC
+      deposit_cny:
+        title: Setor Rupiah Indonesia
+        desc: "Untuk setor via transfer bank, ikuti langkah berikut:"
+        desc_item_1: "1. Kirim formulir untuk mendapatkan nomor referensi."
+        desc_item_2: "2. Transfer uang ke rekening bank bursa. Pastikan nomor referensi tertulis pada berita."
+        desc_item_3: "3. Setoran anda akan dikonfirmasi segera setelah uang diterima."
+        attention: "Perhatian: Nama dari rekening anda haruslah sama dengan nama yang anda daftarkan pada situs kami, jika tidak setoran anda akan gagal."
+        from: Dari
+        to: Ke
+        deposit_name: Nama Anda
+        deposit_account: Rekening Setoran
+        add: Tambah
+        manage: Atur
+        amount: Jumlah Setoran
+        min_amount: Sedikitnya 20000 rupiah
+        to_account: Account
+        to_name: Nama
+        to_bank_name: Nama Bank
+        opening_bank_name: Cabang
+        remark: 'Nomor Referensi'
+
+      deposit_btc:
+        title: Terima BTC
+
+      deposit_coin:
+        address: Alamat
+        new_address: Alamat Baru
+        confirm_gen_new_address: Anda yakin ingin membuat alamat setoran baru?
+        open-wallet: Silahkan gunakan layanan dompet bersama, dompet lokal, dompet genggam, atau dompet online, pilih pembayaran dan kirim.
+        detail: Silahkan tulis alamat berikut pada dompet anda, dan masukkan jumlah yang ingin anda setorkan, lalu konfirmasi dan kirim.
+        scan-qr: Pindai kode QR untuk membayar pada dompet genggam anda.
+        after_deposit: Setelah pengiriman anda selesai, anda dapat mengecek status dari setoran baru anda berikut.
+        generate-new: Buat alamat baru
+
+      deposit_history:
+        title: Riwayat Setoran
+        number: '#'
+        identification: Nomor Referensi
+        time: Waktu
+        txid: ID Transaksi
+        confirmations: Konfirmasi
+        from: Dari
+        amount: Jumlah
+        state_and_action: "Status/Aksi"
+        cancel: Batal
+        no_data: Tidak ada data riwayat
+
+        submitting: Mengajukan
+        cancelled: Dibatalkan
+        submitted: Diajukan
+        accepted: Disetujui
+        rejected: Ditolak
+        checked: Diperiksa
+        warning: Ditandai
+        suspect: Dicurigai
+
+      withdraw_cny:
+        title: Tarik Rupiah Indonesia
+        intro: Pilih bank tujuan dan masukkan nomor rekening dan selesaikan pengajuan.
+        intro_2: Rekening bank dan nama harus sama dengan nama yang terverifikasi.
+        attention: "Jam Kerja: 24/7"
+        account_name: Nama Rekening
+        withdraw_address: Rekening Penarikan
+        balance: Saldo
+        withdraw_amount: Jumlah Penarikan
+        manage_withdraw: Atur Rekening
+        fee_explain: Tentang Biaya
+        min: Paling sedikit
+        withdraw_all: Tarik semua
+
+      withdraw_btc:
+        title: Kirim BTC
+
+      withdraw_coin:
+        intro: Silahkan isi alamat dan jumlah, lalu ajukan formulir. Ajuan akan dikonfirmasi dalam 10 menit
+        label: Label
+        balance: Saldo
+        amount: Jumlah
+        manage_withdraw: Atur Alamat
+        min: Sedikitnya
+        withdraw_all: Semua
+        fee_explain: Tentang Biaya
+
+      withdraw_history:
+        title: Riwayat Penarikan
+        number: Nomor
+        withdraw_time: Waktu
+        withdraw_account: Rekening Penarikan
+        withdraw_address: Alamat
+        withdraw_amount: Jumlah
+        actual_amount: Jumlah Aktual
+        fee: Biaya
+        miner_fee: Biaya
+        state_and_action: "Status/Aksi"
+        cancel: Batal
+        no_data: Tidak ada data riwayat
+
+        submitting: Mengajukan
+        submitted: Diajukan
+        rejected: Ditolak
+        accepted: Disetujui
+        suspect: Dicurigai
+        processing: Diproses
+        coin_ready: Mata Uang Digital Siap
+        coin_done: Mata Uang Digital Selesai
+        done: Selesai
+        almost_done: Hampir Selesai
+        canceled: Dibatalkan
+        failed: Gagal
+
+    auth:
+      please_active_two_factor: Silahkan  Please set mobile number or google authenticator first.
+      submit: Ajukan
+      otp_placeholder: Kata sandi 6-digit
+      google_app: Google Authenticator
+      sms: Pesan Verifikasi SMS Messages
+      send_code: Kirim Kode
+      send_code_alt: Kirim ulang dalam COUNT detik
+      hints:
+        app: Google Authenticator akan membuat kata sandi baru setiap 30 detik, silahkan masukkan tepat pada waktunya.
+        sms: Kami akan mengirimkan pesan teks berisi kode verifikasi kepada anda .
+
+    markets:
+      market_list:
+        all: All Market
+        cny: IDR Market
+        btc: BTC Market
+
