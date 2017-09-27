@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405053726) do
+ActiveRecord::Schema.define(version: 20170927050921) do
 
   create_table "account_versions", force: true do |t|
     t.integer  "member_id"
@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(version: 20150405053726) do
     t.string   "type"
     t.integer  "payment_transaction_id"
     t.integer  "txout"
+    t.string   "to_bank"
   end
 
   add_index "deposits", ["txid", "txout"], name: "index_deposits_on_txid_and_txout", using: :btree

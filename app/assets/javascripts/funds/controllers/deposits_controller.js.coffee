@@ -12,7 +12,7 @@ app.controller 'DepositsController', ['$scope', '$stateParams', '$http', '$filte
     deposit_channel = DepositChannel.findBy('currency', currency)
     account = deposit_channel.account()
 
-    data = { account_id: account.id, member_id: current_user.id, currency: currency, amount: @deposit.amount, fund_source: @deposit.fund_source }
+    data = { account_id: account.id, member_id: current_user.id, currency: currency, amount: @deposit.amount, fund_source: @deposit.fund_source, to_bank: (@deposit.to_bank.bank_name + ' @ ' + @deposit.to_bank.account_number.toString()) }
 
     $('.form-submit > input').attr('disabled', 'disabled')
 
@@ -51,4 +51,8 @@ app.controller 'DepositsController', ['$scope', '$stateParams', '$http', '$filte
       $.publish 'deposit_address:create'
     , 1000)
 
+  $scope.banks = [
+            {bank_name: "BCA", account_name: "Charleston", account_number: "243213", opening_bank_name: "Kediri"},
+            {bank_name: "Mandiri", account_name: "Charleston", account_number: "4213213", opening_bank_name: "Batu"},
+        ];
 ]
