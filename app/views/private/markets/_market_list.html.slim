@@ -1,0 +1,39 @@
+#market_list_wrapper.has-right-dropdown
+  - if @market_groups.size > 1
+    .dropdown-wrapper
+      ul.dropdown-menu
+        li: a.active data-name='all' href="javascript:;" = t('.all_html')
+        - @market_groups.each do |name|
+          li: a data-name=name href="javascript:;" = t(".#{name}_html")
+        li: a.active data-name='pin-unpin-markets' href="javascript:;"
+          span[class="fa fa-thumb-tack" style="padding: 0 10px 0 0"]
+          span[class="info"] = 'Unpin markets'
+  #market_list
+    .panel.panel-default
+      .panel-body.panel-body-head
+        table.table
+          thead: tr
+            th.col-xs-10
+              span[class = 'name_sort_direction fa fa-sort-asc' style='padding: 0 3px 0 0']
+              a.sort_name.hover.asc style='text-decoration: none' href='#' = t('.all')
+            th.col-xs-6.text-left.price
+              span[class = 'price_sort_direction fa fa-unsorted' style='padding: 0 3px 0 0']
+              a.sort_price.hover.unsorted style='text-decoration: none' href='#' = t('.price')
+            th.col-xs-5.text-right.change
+              span[class = 'change_sort_direction fa fa-unsorted' style='padding: 0 3px 0 0'] 
+              a.sort_change.hover.unsorted style='text-decoration: none' href='#' = t('.change')
+              a.switch_unit.hover.fa.fa-percent style='font-size: 13px; text-decoration: none; padding: 0 0 0 3px' href='#'
+              span[class='unit_direction fa fa-unsorted' style='padding: 0 0 0 3px']
+      .panel-body.panel-body-head
+        input[class='form-control' id='markets_filer' placeholder='Search']
+      .panel-body.panel-body-content
+        table.table.table-hover.markets.all
+          tbody
+            - @markets.each do |market|
+              tr.market id="market-list-#{market.id}" class="quote-#{market.quote_unit}" style="font-size: 12px" data-market=market.id
+                td.col-xs-4.name
+                  = link_to market.name, market_path(market)
+                td[class='col-xs-15 price' style='font-weight: bold']
+                  = 0.0
+                td[class='col-xs-5 change']
+                  | +0.00%

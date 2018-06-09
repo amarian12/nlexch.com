@@ -1,10 +1,19 @@
-@import 'vars/peatio';
-$grid-columns: 24;
-$grid-gutter-width: 10px;
+@import "bourbon";
 
-@import "bootstrap";
+@import 'vars/bootstrap';
+
+@import 'bootstrap';
+@import 'bootstrap-switch.min';
+
 @import "bootstrap-wysihtml5/core-b3";
 @import "bootstrap-wysihtml5/wysiwyg-color";
+
+@import 'vars/basic';
+@import 'vars/custom';
+
+.label-failed {
+    background-color: #f44235;
+}
 
 .dl-horizontal dt {
   width: 120px;
@@ -12,6 +21,8 @@ $grid-gutter-width: 10px;
 
 .dl-horizontal dd {
   margin-left: 140px;
+  width: 25em;
+  word-wrap: break-word;
 }
 
 body { padding-top: 80px; }
@@ -73,5 +84,24 @@ span.detail-section {
 .panel-footer {
   ul.pagination {
     margin: 0px;
+  }
+}
+
+.unread {
+  background: #FFB070;
+}
+
+.pending {
+  background: #e8e983;
+}
+
+
+[data-title] {
+  &:before {
+    .text-ignore {
+      font-size: 16px;
+      display: block;
+      content: attr(data-title);
+    }
   }
 }

@@ -1,6 +1,17 @@
-.panel.panel-default
-  .panel-heading = t('.order_book')
-  .panel-body.orders
-    table.table.asks
-    hr
-    table.table.bids
+#order_book.panel.panel-default
+  .panel-body.panel-body-head
+    #order_book_header.row
+      .col-xs-12.col-left: table.table
+        thead: tr
+          th[class='amount text-right col-xs-6' style='padding: 0 5px 0 0'] = t('.amount')
+          th[class='volume text-right col-xs-6' style='padding: 0 5px 0 0'] = t('.volume')
+          th[class='price text-right col-xs-6' style='padding: 0 0 0 0'] = t('.bid')
+      .col-xs-12: table.table.table-head
+        thead: tr
+          th[class='price text-right col-xs-7' style='padding: 0 0 0 0'] = t('.ask')
+          th[class='volume text-right col-xs-8' style='padding: 0 0 0 0'] = t('.volume')
+          th.amount.text-right.col-xs-10 = t('.amount')
+  .panel-body.panel-body-content
+    #order_book_body.row
+      .col-xs-12.col-left: table.table.table-hover.bids
+      .col-xs-12: table.table.table-hover.asks

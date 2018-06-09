@@ -1,10 +1,6 @@
 class Account < ActiveRecord::Base
   include Currencible
 
-  validates :member_id, uniqueness: { scope: :currency }
-
-  after_commit :trigger
-
   FIX = :fix
   UNKNOWN = :unknown
   STRIKE_ADD = :strike_add
@@ -13,6 +9,7 @@ class Account < ActiveRecord::Base
   STRIKE_UNLOCK = :strike_unlock
   ORDER_CANCEL = :order_cancel
   ORDER_SUBMIT = :order_submit
+  ORDER_FULLFILLED = :order_fullfilled
   WITHDRAW_LOCK = :withdraw_lock
   WITHDRAW_UNLOCK = :withdraw_unlock
   DEPOSIT = :deposit
@@ -22,27 +19,39 @@ class Account < ActiveRecord::Base
   FUNS = {:unlock_funds => 1, :lock_funds => 2, :plus_funds => 3, :sub_funds => 4, :unlock_and_sub_funds => 5}
 
   belongs_to :member
-  has_many :fund_sources
   has_many :payment_addresses
   has_many :versions, class_name: "::AccountVersion"
   has_many :partial_trees
 
-  def payment_address
-    if self.payment_addresses.empty?
-      self.gen_payment_address 
-    end
-    self.payment_addresses.using
-  end
+  # Suppose to use has_one here, but I want to store
+  # relationship at account side. (Daniel)
+  belongs_to :default_withdraw_fund_source, class_name: 'FundSource'
 
-  def gen_payment_address
-    address = CoinRPC[self.currency].getnewaddress("payment")
-    self.payment_addresses.create(address: address, currency: self.currency)
+  validates :member_id, uniqueness: { scope: :currency }
+  validates_numericality_of :balance, :locked, greater_than_or_equal_to: ZERO
+
+  scope :enabled, -> { where("currency in (?)", Currency.ids) }
+
+  after_commit :trigger, :sync_update
+
+  def payment_address
+    if !self.default_address
+      if !payment_addresses.last
+        payment_addresses.create(currency: self.currency)
+        return ""
+      else
+        self.default_address = payment_addresses.last.address
+        update default_address: payment_addresses.last.address
+      end
+    end
+
+    return self.default_address
   end
 
   def self.after(*names)
     names.each do |name|
       m = instance_method(name.to_s)
-      define_method(name.to_s) do |*args, &block|  
+      define_method(name.to_s) do |*args, &block|
         m.bind(self).(*args, &block)
         yield(self, name.to_sym, *args)
         self
@@ -71,32 +80,43 @@ class Account < ActiveRecord::Base
   end
 
   def unlock_and_sub_funds(amount, locked: ZERO, fee: ZERO, reason: nil, ref: nil)
-    raise AccountError, "cannot unlock and subtract funds (amount: #{amount})" if ((amount <= 0) or (amount > locked))
-    raise LockedError, "invalid lock amount" unless locked
-    raise LockedError, "invalid lock amount (amount: #{amount}, locked: #{locked}, self.locked: #{self.locked})" if ((locked <= 0) or (locked > self.locked))
+    #raise AccountError, "cannot unlock and subtract funds (amount: #{amount})" if ((amount <= 0) or (amount > locked))
+    #raise LockedError, "invalid lock amount" unless locked
+    #raise LockedError, "invalid lock amount (amount: #{amount}, locked: #{locked}, self.locked: #{self.locked})" if ((locked <= 0) or (locked > self.locked))
     change_balance_and_locked locked-amount, -locked
   end
 
   after(*FUNS.keys) do |account, fun, changed, opts|
-    opts ||= {}
-    fee = opts[:fee] || ZERO
-    reason = opts[:reason] || Account::UNKNOWN
+    begin
+      opts ||= {}
+      fee = opts[:fee] || ZERO
+      reason = opts[:reason] || Account::UNKNOWN
 
-    attributes = {
-      fun: fun, fee: fee, reason: reason, amount: account.amount,
-      currency: account.currency, member_id: account.member_id }
+      attributes = { fun: fun,
+                     fee: fee,
+                     reason: reason,
+                     amount: account.amount,
+                     currency: account.currency.to_sym,
+                     member_id: account.member_id,
+                     account_id: account.id }
 
-    if opts[:ref] and opts[:ref].respond_to?(:id)
-      ref_klass = opts[:ref].class
-      attributes.merge! \
-        modifiable_id: opts[:ref].id,
-        modifiable_type: ref_klass.respond_to?(:base_class) ? ref_klass.base_class.name : ref_klass.name
+      if opts[:ref] and opts[:ref].respond_to?(:id)
+        ref_klass = opts[:ref].class
+        attributes.merge! \
+          modifiable_id: opts[:ref].id,
+          modifiable_type: ref_klass.respond_to?(:base_class) ? ref_klass.base_class.name : ref_klass.name
+      end
+
+      locked, balance = compute_locked_and_balance(fun, changed, opts)
+      attributes.merge! locked: locked, balance: balance
+
+      AccountVersion.optimistically_lock_account_and_create!(account.balance, account.locked, attributes)
+    rescue ActiveRecord::StaleObjectError
+      Rails.logger.info "Stale account##{account.id} found when create associated account version, retry."
+      account = Account.find(account.id)
+      raise ActiveRecord::RecordInvalid, account unless account.valid?
+      retry
     end
-
-    locked, balance = compute_locked_and_balance(fun, changed, opts)
-    attributes.merge! locked: locked, balance: balance
-
-    account.versions.create(attributes)
   end
 
   def self.compute_locked_and_balance(fun, amount, opts)
@@ -124,28 +144,61 @@ class Account < ActiveRecord::Base
   end
 
   def examine
-    versions = self.versions.o2n.load
-
-    expected_amount = versions.reduce 0 do |expected, v|
+    expected = 0
+    versions.find_each(batch_size: 100000) do |v|
       expected += v.amount_change
       return false if expected != v.amount
-      expected
     end
 
-    return expected_amount == self.amount
+    expected == self.amount
   end
 
   def trigger
+    return unless member
+
     json = Jbuilder.encode do |json|
-      json.(self, :balance, :locked, :currency)
+      json.(self, :balance, :locked, :currency, :is_online, :blocks, :headers, :blocktime, :gio_discount, :coin_home, :coin_btt, :coin_be)
     end
     member.trigger('account', json)
+  end
+
+  def coin_home
+    currency_obj.home
+  end
+
+  def coin_btt
+    currency_obj.btt
+  end
+
+  def coin_be
+    currency_obj.be
+  end
+
+  def is_online
+    currency_obj.is_online
+  end
+
+  def blocks
+    currency_obj.blocks
+  end
+
+  def headers
+    currency_obj.headers
+  end
+
+  def blocktime
+    currency_obj.blocktime
+  end
+
+  def gio_discount
+    member.has_gio_deposite_50
   end
 
   def change_balance_and_locked(delta_b, delta_l)
     self.balance += delta_b
     self.locked  += delta_l
-    ActiveRecord::Base.connection.execute "update accounts set balance = balance + #{delta_b}, locked = locked + #{delta_l} where id = #{id}"
+    self.class.connection.execute "update accounts set balance = balance + #{delta_b}, locked = locked + #{delta_l} where id = #{id}"
+    add_to_transaction # so after_commit will be triggered
     self
   end
 
@@ -155,4 +208,28 @@ class Account < ActiveRecord::Base
   class AccountError < RuntimeError; end
   class LockedError < AccountError; end
   class BalanceError < AccountError; end
+
+  def as_json(options = {})
+    super(options).merge({
+      # check if there is a useable address, but don't touch it to create the address now.
+      "deposit_address" => payment_address,
+      "name_text" => currency_obj.name_text,
+      "default_withdraw_fund_source_id" => default_withdraw_fund_source_id,
+      "is_online" => currency_obj.is_online,
+      "blocks" => currency_obj.blocks,
+      "headers" => currency_obj.headers,
+      "blocktime" => currency_obj.blocktime,
+      "gio_discount" => member.has_gio_deposite_50,
+      "coin_home" => currency_obj.home,
+      "coin_btt" => currency_obj.btt,
+      "coin_be" => currency_obj.be
+    })
+  end
+
+  private
+
+  def sync_update
+    ::Pusher["private-#{member.sn}"].trigger_async('accounts', { type: 'update', id: self.id, attributes: {balance: balance, locked: locked, gio_discount: member.has_gio_deposite_50} })
+  end
+
 end

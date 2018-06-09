@@ -1,20 +1,479 @@
-= content_for :header do
-  header
-    .container.navbar-fixed-top
-      nav#top-menu.navbar.navbar-default role="navigation"
-        = render 'shared/menu'
-
-      ul.nav.nav-justified.assets-nav
-        li.active data-scroll-nav='0'
-          a = t('.liability-proof')
-        li        data-scroll-nav='1'
-          a = t('.btc-assets')
-        li        data-scroll-nav='2'
-          a = t('.cny-assets')
-
 = content_for :frame do
-  .container style="margin-top: 150px; margin-bottom: 240px;"
-    div data-scroll-index=0 = render 'liability_proof'
-    div data-scroll-index=1 = render 'btc_assets'
-    div data-scroll-index=2 = render 'cny_assets'
+  .container
+    ul.nav.nav-justified.assets-nav
+      li.active data-scroll-nav='0'
+        a = t('.liability-proof')
+      li        data-scroll-nav='1' style='display:none'
+        a = t('.btc-assets')
+      li        data-scroll-nav='2' style='display:none'
+        a = t('.gio-assets')
+      li        data-scroll-nav='3' style='display:none'
+        a = t('.doge-assets')
+      li        data-scroll-nav='4' style='display:none'
+        a = t('.ltc-assets')
+      li        data-scroll-nav='5' style='display:none'
+        a = t('.eth-assets')
+      li        data-scroll-nav='6' style='display:none'
+        a = t('.psd-assets')
+      li        data-scroll-nav='7' style='display:none'
+        a = t('.phc-assets')
+      li        data-scroll-nav='8'
+        a = t('.xgc-assets')
+li        data-scroll-nav='9'
+        a = t('.dev-assets')
+li        data-scroll-nav='10'
+        a = t('.pbs-assets')
+li        data-scroll-nav='11'
+        a = t('.din-assets')
+li        data-scroll-nav='12'
+        a = t('.adv-assets')
+li        data-scroll-nav='13'
+        a = t('.dv7-assets')
+li        data-scroll-nav='14'
+        a = t('.jew-assets')
+li        data-scroll-nav='15'
+        a = t('.argo-assets')
+li        data-scroll-nav='16'
+        a = t('.esco-assets')
+li        data-scroll-nav='17'
+        a = t('.neet-assets')
+li        data-scroll-nav='18'
+        a = t('.xylo-assets')
+li        data-scroll-nav='19'
+        a = t('.steep-assets')
+li        data-scroll-nav='20'
+        a = t('.bitg-assets')
+li        data-scroll-nav='21'
+        a = t('.crft-assets')
+li        data-scroll-nav='22'
+        a = t('.env-assets')
+li        data-scroll-nav='23'
+        a = t('.xsg-assets')
+li        data-scroll-nav='24'
+        a = t('.nyc-assets')
+li        data-scroll-nav='25'
+        a = t('.zoc-assets')
+li        data-scroll-nav='26'
+        a = t('.btcz-assets')
+li        data-scroll-nav='27'
+        a = t('.ytn-assets')
+li        data-scroll-nav='28'
+        a = t('.yic-assets')
+li        data-scroll-nav='29'
+        a = t('.tlp-assets')
+li        data-scroll-nav='30'
+        a = t('.pwc-assets')
+li        data-scroll-nav='31'
+        a = t('.shnd-assets')
+li        data-scroll-nav='32'
+        a = t('.lmn-assets')
+li        data-scroll-nav='33'
+        a = t('.kec-assets')
+li        data-scroll-nav='34'
+        a = t('.abs-assets')
+li        data-scroll-nav='35'
+        a = t('.suppo-assets')
+li        data-scroll-nav='36'
+        a = t('.linda-assets')
+li        data-scroll-nav='37'
+        a = t('.hight-assets')
+li        data-scroll-nav='38'
+        a = t('.bls-assets')
+li        data-scroll-nav='39'
+        a = t('.tokc-assets')
+li        data-scroll-nav='40'
+        a = t('.elp-assets')
+li        data-scroll-nav='41'
+        a = t('.zex-assets')
+li        data-scroll-nav='42'
+        a = t('.rlc-assets')
+li        data-scroll-nav='43'
+        a = t('.lucky-assets')
+li        data-scroll-nav='44'
+        a = t('.ich-assets')
+li        data-scroll-nav='45'
+        a = t('.mmb-assets')
+li        data-scroll-nav='46'
+        a = t('.pnx-assets')
+li        data-scroll-nav='47'
+        a = t('.mix-assets')
+li        data-scroll-nav='48'
+        a = t('.kreds-assets')
+li        data-scroll-nav='49'
+        a = t('.bkt-assets')
+li        data-scroll-nav='50'
+        a = t('.snx-assets')
+li        data-scroll-nav='51'
+        a = t('.giro-assets')
+li        data-scroll-nav='52'
+        a = t('.onex-assets')
+li        data-scroll-nav='53'
+        a = t('.pushi-assets')
+li        data-scroll-nav='54'
+        a = t('.vrt-assets')
+li        data-scroll-nav='55'
+        a = t('.zaca-assets')
+li        data-scroll-nav='56'
+        a = t('.xhm-assets')
+li        data-scroll-nav='57'
+        a = t('.xar-assets')
+li        data-scroll-nav='58'
+        a = t('.rupx-assets')
+li        data-scroll-nav='59'
+        a = t('.frm-assets')
+li        data-scroll-nav='60'
+        a = t('.men-assets')
+li        data-scroll-nav='61'
+        a = t('.mun-assets')
+li        data-scroll-nav='62'
+        a = t('.onemc-assets')
+li        data-scroll-nav='63'
+        a = t('.alp-assets')
+li        data-scroll-nav='64'
+        a = t('.zel-assets')
+li        data-scroll-nav='65'
+        a = t('.amx-assets')
+li        data-scroll-nav='66'
+        a = t('.pew-assets')
+li        data-scroll-nav='67'
+        a = t('.fsc-assets')
+li        data-scroll-nav='68'
+        a = t('.sln-assets')
+li        data-scroll-nav='69'
+        a = t('.usx-assets')
+li        data-scroll-nav='70'
+        a = t('.bsx-assets')
+li        data-scroll-nav='71'
+        a = t('.eot-assets')
+li        data-scroll-nav='72'
+        a = t('.xap-assets')
+li        data-scroll-nav='73'
+        a = t('.miac-assets')
+li        data-scroll-nav='74'
+        a = t('.kc-assets')
+li        data-scroll-nav='75'
+        a = t('.arhm-assets')
+li        data-scroll-nav='76'
+        a = t('.olmp-assets')
+li        data-scroll-nav='77'
+        a = t('.onz-assets')
+li        data-scroll-nav='78'
+        a = t('.agn-assets')
+li        data-scroll-nav='79'
+        a = t('.crz-assets')
+li        data-scroll-nav='80'
+        a = t('.enix-assets')
+li        data-scroll-nav='81'
+        a = t('.snc-assets')
+li        data-scroll-nav='82'
+        a = t('.quaz-assets')
+li        data-scroll-nav='83'
+        a = t('.scriv-assets')
+li        data-scroll-nav='84'
+        a = t('.ethf-assets')
+li        data-scroll-nav='85'
+        a = t('.arepa-assets')
+li        data-scroll-nav='86'
+        a = t('.sub1x-assets')
+li        data-scroll-nav='87'
+        a = t('.cheese-assets')
+li        data-scroll-nav='88'
+        a = t('.jiyo-assets')
+li        data-scroll-nav='89'
+        a = t('.pyro-assets')
+li        data-scroll-nav='90'
+        a = t('.roe-assets')
+li        data-scroll-nav='91'
+        a = t('.citr-assets')
+li        data-scroll-nav='92'
+        a = t('.xen-assets')
+li        data-scroll-nav='93'
+        a = t('.edl-assets')
+li        data-scroll-nav='94'
+        a = t('.cru-assets')
+li        data-scroll-nav='95'
+        a = t('.ndc-assets')
+li        data-scroll-nav='96'
+        a = t('.zls-assets')
+li        data-scroll-nav='97'
+        a = t('.proton-assets')
+li        data-scroll-nav='98'
+        a = t('.krait-assets')
+li        data-scroll-nav='99'
+        a = t('.aln-assets')
+li        data-scroll-nav='100'
+        a = t('.bcp-assets')
+li        data-scroll-nav='101'
+        a = t('.xmx-assets')
+li        data-scroll-nav='102'
+        a = t('.ida-assets')
+li        data-scroll-nav='103'
+        a = t('.unify-assets')
+li        data-scroll-nav='104'
+        a = t('.and-assets')
+li        data-scroll-nav='105'
+        a = t('.vig-assets')
+li        data-scroll-nav='106'
+        a = t('.peps-assets')
+li        data-scroll-nav='107'
+        a = t('.vizz-assets')
+li        data-scroll-nav='108'
+        a = t('.mon-assets')
+li        data-scroll-nav='109'
+        a = t('.lunex-assets')
+li        data-scroll-nav='110'
+        a = t('.pruf-assets')
+li        data-scroll-nav='111'
+        a = t('.want-assets')
+li        data-scroll-nav='112'
+        a = t('.mmo-assets')
+li        data-scroll-nav='113'
+        a = t('.cbt-assets')
+li        data-scroll-nav='114'
+        a = t('.xt3-assets')
+li        data-scroll-nav='115'
+        a = t('.btcf-assets')
+li        data-scroll-nav='116'
+        a = t('.zcr-assets')
+li        data-scroll-nav='117'
+        a = t('.slrc-assets')
+li        data-scroll-nav='118'
+        a = t('.aevo-assets')
+li        data-scroll-nav='119'
+        a = t('.ppx-assets')
+li        data-scroll-nav='120'
+        a = t('.yoba-assets')
+li        data-scroll-nav='121'
+        a = t('.nbx-assets')
+li        data-scroll-nav='122'
+        a = t('.elli-assets')
+li        data-scroll-nav='123'
+        a = t('.kgx-assets')
+li        data-scroll-nav='124'
+        a = t('.akn-assets')
+li        data-scroll-nav='125'
+        a = t('.aka-assets')
+li        data-scroll-nav='126'
+        a = t('.rvn-assets')
+li        data-scroll-nav='127'
+        a = t('.posq-assets')
+li        data-scroll-nav='128'
+        a = t('.radius-assets')
+li        data-scroll-nav='129'
+        a = t('.dsc-assets')
+li        data-scroll-nav='130'
+        a = t('.varius-assets')
+li        data-scroll-nav='131'
+        a = t('.cyr-assets')
+li        data-scroll-nav='132'
+        a = t('.bbrc-assets')
+li        data-scroll-nav='133'
+        a = t('.ikt-assets')
+li        data-scroll-nav='134'
+        a = t('.bsl-assets')
+li        data-scroll-nav='135'
+        a = t('.bff-assets')
+li        data-scroll-nav='136'
+        a = t('.toba-assets')
+li        data-scroll-nav='137'
+        a = t('.alps-assets')
+li        data-scroll-nav='138'
+        a = t('.rlm-assets')
+li        data-scroll-nav='139'
+        a = t('.vzh-assets')
+li        data-scroll-nav='140'
+        a = t('.rco-assets')
+li        data-scroll-nav='141'
+        a = t('.cbc-assets')
+li        data-scroll-nav='142'
+        a = t('.exam-assets')
+li        data-scroll-nav='143'
+        a = t('.nah-assets')
+li        data-scroll-nav='144'
+        a = t('.slash-assets')
+li        data-scroll-nav='145'
+        a = t('.adr-assets')
+li        data-scroll-nav='146'
+        a = t('.htrc-assets')
+li        data-scroll-nav='147'
+        a = t('.ice-assets')
+li        data-scroll-nav='148'
+        a = t('.ebs-assets')
+li        data-scroll-nav='149'
+        a = t('.xeh-assets')
+li        data-scroll-nav='150'
+        a = t('.krm-assets')
+li        data-scroll-nav='151'
+        a = t('.cgur-assets')
+li        data-scroll-nav='152'
+        a = t('.vre-assets')
+li        data-scroll-nav='153'
+        a = t('.her-assets')
+li        data-scroll-nav='154'
+        a = t('.bzm-assets')
+li        data-scroll-nav='155'
+        a = t('.itis-assets')
+li        data-scroll-nav='156'
+        a = t('.hpp-assets')
+li        data-scroll-nav='157'
+        a = t('.dsn-assets')
+li        data-scroll-nav='158'
+        a = t('.demos-assets')
+li        data-scroll-nav='159'
+        a = t('.jagar-assets')
+/li159
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    - if current_user
+      div data-scroll-index=0 = render 'liability_proof'

@@ -1,0 +1,25 @@
+#bid_entry.panel.panel-default.entry-right
+  .panel-body
+    = form_for [market, order], :remote => true, :html => { :autocomplete => 'off' } do |f|
+      = f.hidden_field :ord_type
+      .input-group.price
+        label.input-group-addon = t('.price')
+        span.label.label-danger.hint-price-disadvantage
+        = f.text_field :price, class: 'form-control'
+        span.input-group-addon = t(market.bid['currency'], scope: 'market.currency')
+      .input-group.amount
+        label.input-group-addon = t('.amount')
+        = f.text_field :origin_volume, class: 'form-control'
+        span.input-group-addon = t(market.ask['currency'], scope: 'market.currency')
+      .input-group.total
+        label.input-group-addon = t('.total')
+        span.label.label-info.hint-positions
+        span.label.label-fee-info.fee-info
+        span.label.label-fee.hint-fee
+        = f.text_field :total, class: 'form-control'
+        span.input-group-addon = t(market.bid['currency'], scope: 'market.currency')
+      a[class='label label-fee-discount-info fee-discount-info' href='https://www.gravio.net/blog/graviex-fees-bonuses' target='_blank']
+      = render partial: 'balance', locals: {currency: t(market.bid['currency'], scope: 'market.currency'), entry_type: 'bid'}
+
+      button.btn.btn-danger.btn-block.text-up type="submit" = t('.action', currency: t(market.ask['currency'], scope: 'market.currency'))
+  = render partial: 'mask'

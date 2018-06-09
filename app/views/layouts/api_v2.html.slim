@@ -6,16 +6,14 @@ html lang="en"
     = javascript_include_tag "api_v2"
     = render 'shared/html5'
     = render 'shared/meta'
-  body id='#{controller_name}-#{action_name}' data-lang="#{I18n.locale.to_s.downcase}"
-    .container
-      nav.navbar.navbar-default role='navigation'
+  body id='#{body_id}' data-lang="#{locale_name}"
+    .navbar.navbar-default.navbar-static-top role='navigation'
+      .container
         .navbar-header
-          a.navbar-brand href='#' Peatio API Document
+          a.navbar-brand href='#' GRAVIEX API Document
         ul.nav.navbar-nav.pull-right
           - if current_user
             = top_nav_link(current_user.email, settings_path, 'user', controllers: ['two_factors', 'identities', 'id_documents'])
-            - if is_admin?
-              = top_nav_link(t('header.dashboard'), admin_dashboard_path, 'dashboard')
             li: a#sign_out href='#{main_app.signout_path}'
               i.fa.fa-sign-out
               span = t('header.signout')
@@ -30,5 +28,8 @@ html lang="en"
             ul#languages.dropdown-menu
               - I18n.available_locales.each do |lang|
                 li: a href="?lang=#{lang}": img src='#{language_path(lang)}'
+
+    .container
       = yield
+
     = render 'shared/footer'

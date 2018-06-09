@@ -8,11 +8,14 @@ class PaymentTransaction < ActiveRecord::Base
   STATE = [:unconfirm, :confirming, :confirmed]
   enumerize :aasm_state, in: STATE, scope: true
 
-  validates_uniqueness_of :txid
-  belongs_to :deposit, foreign_key: 'txid', primary_key: 'txid'
+  validates_presence_of :txid
+
+  has_one :deposit
   belongs_to :payment_address, foreign_key: 'address', primary_key: 'address'
   has_one :account, through: :payment_address
   has_one :member, through: :account
+
+  after_update :sync_update
 
   aasm :whiny_transitions => false do
     state :unconfirm, initial: true
@@ -36,14 +39,30 @@ class PaymentTransaction < ActiveRecord::Base
   end
 
   def refresh_confirmations
-    raw = CoinRPC[deposit.currency].gettransaction(txid)
-    self.confirmations = raw[:confirmations]
+    if deposit.currency == 'eth' || deposit.currency == 'mix' || deposit.currency == 'aka'
+      raw = CoinRPC[deposit.currency].eth_getTransactionByHash(txid)      
+      if raw == nil
+        raw = CoinRPC[deposit.currency].eth_getTransaction(txid)
+      end
+      self.confirmations = CoinRPC[deposit.currency].eth_blockNumber.to_i(16) - raw[:blockNumber].to_i(16)
+    else
+      raw = CoinRPC[deposit.currency].gettransaction(txid)
+      self.confirmations = raw[:confirmations]
+    end
     save!
   end
 
   def deposit_accept
     if deposit.may_accept?
       deposit.accept! 
+    end
+  end
+
+  private
+
+  def sync_update
+    if self.confirmations_changed?
+      ::Pusher["private-#{deposit.member.sn}"].trigger_async('deposits', { type: 'update', id: self.deposit.id, attributes: {confirmations: self.confirmations}})
     end
   end
 end

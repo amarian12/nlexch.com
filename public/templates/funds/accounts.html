@@ -1,0 +1,29 @@
+<table class="table table-currencies" ng-repeat="account in accounts" bind="accounts">
+  <tr class="currency-item" ng-class="{selected: accountsCtrl.isSelected(account.currency),
+    'deposit-now': accountsCtrl.isDeposit(),
+    'withdraw-now': accountsCtrl.isWithdraw() }"
+    data-currency="{{account.currency}}">
+
+    <td class="currency-logo">
+      <img ng-src="/icon-{{account.currency}}.png" alt="">
+      <span class="currency-symbol">{{ account.currency | uppercase }}</span>
+      <img class="currency-state" ng-src="/icon-{{account.is_online}}.png" alt="">
+      <span class="currency-symbol" style="color: {{ account.is_online == 'online' ? 'green' : 'red' }}" >{{ account.is_online }}</span>
+    </td>
+    <td class="currency-balance-col">
+      <p class="currency-balance"><span class="currency-sign"></span>{{account.balance | round_down }}</p>
+      <span class="currency-balance-locked"><i class="fa fa-lock"></i> {{account.locked}}</span>
+      <span class="currency-balance-locked"><i class="fa fa-tag"></i> {{account.name_text}}</span>
+      <span class="currency-info">{{account.blocks + ' / ' + account.blocktime}}</span>
+      <span class="">
+        <a class="fa fa-home currency-info-ext" style="padding: 0 8px 0 0" href="{{account.coin_home}}" target="_blank"></a>
+        <a class="fa fa-comments currency-info-ext" style="padding: 0 8px 0 0" href="{{account.coin_btt}}" target="_blank"></a>
+        <a class="fa fa-sitemap currency-info-ext" style="padding: 0 8px 0 0" href="{{account.coin_be}}" target="_blank"></a>
+      </span>
+    </td>
+    <td class="currency-actions">
+      <p class="currency-deposit"><a href="#" ng-click="accountsCtrl.deposit(account); $event.preventDefault()" >{{ 'funds.deposit' | t }}</a></p>
+      <p class="currency-withdraw"><a href="#" ng-click="accountsCtrl.withdraw(account); $event.preventDefault()" >{{ 'funds.withdraw' | t }}</a></p>
+    </td>
+  </tr>
+</table>

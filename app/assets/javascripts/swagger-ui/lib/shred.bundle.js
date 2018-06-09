@@ -1160,6 +1160,7 @@ var createRequest = function(request) {
 
   var http = request.scheme == "http" ? HTTP : HTTPS;
 
+
   // Set up the real request using the selected library. The request won't be
   // sent until we call `.end()`.
   request._raw = http.request(reqParams, function(response) {
