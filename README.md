@@ -61,6 +61,7 @@ You must know what you're doing, there's no shortcut. Please get prepared before
 * [Bitspark](https://bitspark.io) - Bitcoin Exchange in Hong Kong
 * [MarsX.io](https://acx.io) - Australian Cryptocurrency Exchange
 * [NLexch.com](https://www.nlexch.com) - Dutch Cryptocurrency Exchange
+* [Graviex.net](https://graviex.net/) - Gravio Ecosystem Cryptocurrency Exchange
 
 
 ### Mobile Apps ###
