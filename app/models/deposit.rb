@@ -124,6 +124,7 @@ class Deposit < ActiveRecord::Base
       if c.code.upcase == 'ETH'
         payment_tx = PaymentTransaction::Normal.where(txid: txid).first
         local_nonce = 0
+        CoinRPC[channel.currency_obj.code].personal_unlockAccount(payment_tx.address, "", "0x30")
         local_nonce = CoinRPC[channel.currency_obj.code].parity_nextNonce(payment_tx.address).to_i(16)
         gas_limit = channel.currency_obj.gas_limit
         gas_price = channel.currency_obj.gas_price
