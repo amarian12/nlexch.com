@@ -16,14 +16,13 @@ module Admin
       can :manage, TwoFactor
 
       can :menu, Deposit
-      can :manage, ::Deposits::Bank
-      can :manage, ::Deposits::Satoshi
-      can :manage, ::Deposits::Ether
-
       can :menu, Withdraw
-      can :manage, ::Withdraws::Bank
-      can :manage, ::Withdraws::Satoshi
-      can :manage, ::Withdraws::Ether
+
+      klassnames = ::Deposits.constants.select { |cl| not (cl.to_s.include? 'able' or cl.to_s.include? 'Controller') }
+      klassnames.each do |klassname|
+        can :manage, "::Deposits::#{klassname}".constantize
+        can :manage, "::Withdraws::#{klassname}".constantize
+      end
 
     end
   end
